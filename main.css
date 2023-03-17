@@ -1,0 +1,41 @@
+/* 공격 버튼 */
+.atk_btn { 
+    border-radius: 20%;
+    border: 1px solid rgb(60, 67, 73);
+    cursor: pointer;
+}
+
+.namebox_wrap {
+    position: relative;
+    width: 80px; height: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+    background-color: rgb(60, 67, 73);
+    box-shadow: 1px 1px 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.namebox {
+    text-align: center;
+}
+
+.hpbox {
+    position: absolute;
+    top: 10px;
+    width: 80px; height: 20px;
+    background-color: rgb(233, 242, 238);
+    box-shadow: 1px 1px 1px black;
+}
+
+.hpbar {
+    background-color: rgb(240, 42, 105);
+}
+
+.namebox_wrap p {
+    font-size: 10px;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
