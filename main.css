@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: antiquewhite;
+  background-image: url("./img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 스토어 및 인벤토리 버튼 시작 */
+.wrap .top {
+  width: 100%;
+  height: 100px;
+  border: 1px solid;
+  display: flex;
+}
+.wrap .top .top-wrap {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.wrap .top .top-wrap .top-lt {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wrap .top .top-wrap .top-lt .weapon {
+  width: 100px;
+  height: 100px;
+  background-color: antiquewhite;
+  display: flex;
+  margin-left: 10px;
+}
+.wrap .top .top-wrap .top-lt .ammor {
+  width: 100px;
+  height: 100px;
+  background-color: antiquewhite;
+  margin-left: 10px;
+}
+
+.wrap .top .top-wrap .top-rt {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.wrap .top .top-rt .store {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  margin-right: 10px;
+  background-color: antiquewhite;
+}
+.wrap .top .top-rt .inven {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  margin-right: 10px;
+  background-color: antiquewhite;
+}
+/* 스토어 및 인벤토리 버튼 끝 */
+
+/* 게임 메인 페이지 시작 */
+.wrap .middle {
+  width: 100%;
+  height: 570px;
+  /* background-color: black; */
+  position: relative;
+}
+
+.wrap .middle .user {
+  width: 300px;
+  height: 300px;
+  /* background-color: white; */
+  border: 1px solid;
+  position: absolute;
+  bottom: 30px;
+  left: 200px;
+  background-image: url("./img/character.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+/* 대미지 */
+.wrap .middle .damage {
+  width: 400px;
+  height: 400px;
+  border: 1px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+.wrap .middle .monster {
+  width: 300px;
+  height: 300px;
+  /* background-color: white; */
+  border: 1px solid;
+  position: absolute;
+  bottom: 30px;
+  right: 200px;
+  background-image: url("./img/wolf.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* 게임 메인 페이지 끝 */
+
+/* 아래쪽 텍스트, 버튼 시작 */
+.wrap .bottom {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  position: relative;
+}
+.wrap .bottom .bottombox {
+  width: 1320px;
+  height: 120px;
+  border: 1px solid;
+}
+
+.wrap .bottom .userhp {
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+  top: 0px;
+  left: 200px;
+}
+
+.wrap .bottom .userhp .userid {
+  width: 100%;
+  height: 50%;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .bottom .userhp .hpbox {
+  width: 100%;
+  height: 50%;
+  border: 1px solid;
+  display: flex;
+}
+
+.wrap .bottom .userhp .hpbox .hptxt {
+  width: 80px;
+  height: 100%;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .bottom .userhp .hpbox .hpbarbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .bottom .userhp .hpbox .hpbarbox .hpbar {
+  width: 22 0px;
+  height: 35px;
+  border: 1px solid;
+}
+
+.wrap .bottom .monsterhp {
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 200px;
+}
+
+.wrap .bottom .atkbtn {
+  width: 180px;
+  height: 120px;
+  border: 1px solid;
+  background-color: antiquewhite;
+}
+/* 아래쪽 텍스트, 버튼 끝 */
