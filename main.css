@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: antiquewhite;
+  background-image: url("./img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 스토어 및 인벤토리 버튼 시작 */
+.wrap .top {
+  width: 100%;
+  height: 100px;
+  border: 1px solid;
+  display: flex;
+}
+.wrap .top .top-wrap {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.wrap .top .top-wrap .top-lt {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wrap .top .top-wrap .top-lt .weapon {
+  width: 100px;
+  height: 100px;
+  background-color: antiquewhite;
+  display: flex;
+  margin-left: 10px;
+}
+.wrap .top .top-wrap .top-lt .ammor {
+  width: 100px;
+  height: 100px;
+  background-color: antiquewhite;
+  margin-left: 10px;
+}
+
+.wrap .top .top-wrap .top-rt {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.wrap .top .top-rt .store {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  margin-right: 10px;
+  background-color: antiquewhite;
+}
+.wrap .top .top-rt .inven {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  margin-right: 10px;
+  background-color: antiquewhite;
+}
+/* 스토어 및 인벤토리 버튼 끝 */
+
+/* 게임 메인 페이지 시작 */
+.wrap .middle {
+  width: 100%;
+  height: 75%;
+  /* background-color: black; */
+  position: relative;
+}
+
+.wrap .middle .user {
+  width: 300px;
+  height: 300px;
+  /* background-color: white; */
+  border: 1px solid;
+  position: absolute;
+  bottom: 30px;
+  left: 20%;
+  background-image: url("./img/character.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+/* 대미지 */
+.wrap .middle .damage {
+  width: 400px;
+  height: 80px;
+  border: 1px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+/* 공격 시 뜨는 숫자 */
+.damage_number {
+  font-size: 70px; font-weight: 1000;
+
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  background-image: linear-gradient(red, 60%, yellow);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
+
+/* 크리티컬 공격 시 뜨는 숫자 */
+.damage_number_2 {
+  font-size: 80px;
+  background-image: linear-gradient(to top, white, rgb(156, 30, 156));
+}
+
+/* 물약 먹었을 때 뜨는 숫자 */
+.heel_number {
+  font-size: 50px;
+  background-image: linear-gradient(to top, white, blue);
+}
+
+.wrap .middle .monster {
+  width: 300px;
+  height: 300px;
+  /* background-color: white; */
+  border: 1px solid;
+  position: absolute;
+  bottom: 3%;
+  right: 20%;
+  background-image: url("./img/wolf.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* 게임 메인 페이지 끝 */
+
+/* 아래쪽 텍스트, 버튼 시작 */
+.wrap .bottom {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  position: relative;
+}
+
+.wrap .bottom .userhp {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top: 0px;
+  left: 20%;
+
+  border: 1px solid black;
+  border-radius: 10px;
+    
+  background-color: rgb(60, 67, 73);
+  box-shadow: 1px 1px 1px black;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap .bottom .userhp .userid {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.wrap .bottom .userhp .hpbox {
+  width: 100%;
+  height: 50%;
+  border: 1px solid;
+  display: flex;
+  background-color: rgb(233, 242, 238);
+  box-shadow: 1px 1px 1px black;
+}
+
+.wrap .bottom .userhp .hpbox .hptxt {
+  width: 80px;
+  height: 100%;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 15px;
+  color: rgb(60, 67, 73);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.wrap .bottom .userhp .hpbox .hpbarbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(233, 242, 238);
+  box-shadow: 1px 1px 1px black;
+}
+.wrap .bottom .userhp .hpbox .hpbarbox .hpbar {
+  width: 220px;
+  height: 35px;
+  background-color: rgb(240, 42, 105);
+}
+
+.wrap .bottom .monsterhp {
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 20%;
+}
+
+.wrap .bottom .atkbtn {
+  position: fixed;
+  bottom: 30px; right: 30px;
+  width: 180px;
+  height: 180px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  border: 1px solid rgb(60, 67, 73);
+  cursor: pointer;
+  background-image: url("./img/atk_btn.png");
+  background-repeat: no-repeat;
+}
+/* 아래쪽 텍스트, 버튼 끝 */
