@@ -1,0 +1,122 @@
+.container{
+    width:100%;
+    background-color: rgba(221, 191, 18, 0.288);
+}
+.title-image{
+    width:100%;
+
+}
+.contents .contents-title{
+    font-size:100px;
+    margin-bottom: 50px;
+    margin-left:270px;
+    width:100%;
+}
+
+.contents{
+    margin: auto;width: 708px;
+    
+}
+
+.box-contents{
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    border-bottom: 1px solid;
+    height: 900px;
+    align-content: center; 
+    /* align-content의 경우 flex-wrap상태일때만 사용 */
+    justify-content: center;
+    /* 자식 요소를 좌측 정렬 */
+}
+
+.box{
+    width:366px;
+    height:700px;
+    border:1px solid;
+    margin: 10px;
+    box-shadow:10px 10px 10px rgb(172, 172, 172) ;
+    
+}
+
+.box2{
+    width:366px;
+    height:130px;
+    border:1px solid;
+    margin: 10px;
+    box-shadow:10px 10px 10px rgb(172, 172, 172) ;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    
+}
+
+
+
+.box1_item_store{
+    width:366px;
+    height:130px;
+    border:1px solid;
+    margin: 10px;
+    box-shadow:10px 10px 10px rgb(172, 172, 172) ;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.left_area{
+    
+    width: 250px;
+    height: 200px;
+    display:flex;
+    align-items: flex-end;
+}
+
+.right_area{
+    
+    width: 250px;
+    height:250px;
+    display:flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+
+
+
+
+
+
+.tab-menu> input{
+    display: none;
+}
+
+.tab-menu > input + label { 
+    display: inline-block;
+    padding: 10px;
+    background-color: white;
+    color: gray;
+    font-size:20px;
+    
+    cursor: pointer;
+}
+
+.tab-menu > input:checked + label{
+    background : #0d4fdd9c;
+    color: bisque;
+
+}
+
+.bot{
+    
+}
+
+.imgsize{
+
+    width:130px;
+    height:130px;
+    
+}
+
+
