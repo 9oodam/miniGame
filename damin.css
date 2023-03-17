@@ -5,6 +5,7 @@
     cursor: pointer;
 }
 
+/* 닉네임 박스 */
 .namebox_wrap {
     position: relative;
     width: 80px; height: 30px;
@@ -22,6 +23,7 @@
     text-align: center;
 }
 
+/* HP 박스 */
 .hpbox {
     position: absolute;
     top: 10px;
@@ -38,4 +40,26 @@
     font-size: 10px;
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 공격 시 뜨는 숫자 */
+.atk_number, .atk_number_2, .heel_number {
+    font-size: 50px; font-weight: bolder;
+    background-image: linear-gradient(to top, white, orange);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* 크리티컬 공격 시 뜨는 숫자 */
+.atk_number_2 {
+    font-size: 80px;
+    background-image: linear-gradient(to top, white, rgb(156, 30, 156));
+}
+
+/* 물약 먹었을 때 뜨는 숫자 */
+.heel_number {
+    font-size: 50px;
+    background-image: linear-gradient(to top, white, blue);
 }
