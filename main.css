@@ -1,17 +1,20 @@
+@font-face {
+  font-family: 'maple';
+  src: url(./font/PressStart2P-Regular.ttf) format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
+  font-family: 'maple'
 }
 
 .wrap {
-  width: 100vw;
-  height: 100vh;
+  width: 100vw; height: 100vh;
   position: fixed;
-  background-color: antiquewhite;
   background-image: url("./img/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,7 +24,6 @@ body {
 .wrap .top {
   width: 100%;
   height: 100px;
-  border: 1px solid;
   display: flex;
 }
 .wrap .top .top-wrap {
@@ -37,17 +39,19 @@ body {
   left: 0;
 }
 .wrap .top .top-wrap .top-lt .weapon {
-  width: 100px;
-  height: 100px;
-  background-color: antiquewhite;
-  display: flex;
-  margin-left: 10px;
+  width: 100px; height: 100px;
+  margin-top: 10px; margin-left: 10px;
+  background-image: url("./img/buff_atk_icon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .wrap .top .top-wrap .top-lt .ammor {
-  width: 100px;
-  height: 100px;
-  background-color: antiquewhite;
-  margin-left: 10px;
+  width: 100px; height: 100px;
+  margin-top: 10px; margin-left: 10px;
+  background-image: url("./img/buff_def_icon.png");
+  background-repeat: no-repeat;
+  background-size: 95%;
+  background-position: center;
 }
 
 .wrap .top .top-wrap .top-rt {
@@ -58,18 +62,27 @@ body {
 }
 
 .wrap .top .top-rt .store {
-  width: 100px;
-  height: 100px;
-  border: 1px solid;
+  width: 100px; height: 100px;
+  margin-top: 10px;
   margin-right: 10px;
-  background-color: antiquewhite;
+  border-radius: 50%;
+  border: 4px solid rgb(0, 0, 0);
+  cursor: pointer;
+  background-image: url("./img/cart_icon.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .wrap .top .top-rt .inven {
-  width: 100px;
-  height: 100px;
-  border: 1px solid;
+  width: 100px; height: 100px;
+  margin-top: 10px;
   margin-right: 10px;
-  background-color: antiquewhite;
+  border-radius: 50%;
+  border: 4px solid rgb(0, 0, 0);
+  cursor: pointer;
+  background-image: url("./img/inven_icon.webp");
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 /* 스토어 및 인벤토리 버튼 끝 */
 
@@ -85,39 +98,38 @@ body {
   width: 300px;
   height: 300px;
   /* background-color: white; */
-  border: 1px solid;
   position: absolute;
   bottom: 30px;
   left: 20%;
   background-image: url("./img/character.png");
-  background-size: contain;
+  background-size: 60%;
+  background-position: bottom;
   background-repeat: no-repeat;
   transform: rotateY(180deg);
 }
 /* 대미지 */
 .wrap .middle .damage {
   width: 400px;
-  height: 80px;
-  border: 1px solid;
+  height: 100px;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
+  transform: translate(-50%, 0%);
 }
 /* 공격 시 뜨는 숫자 */
-.damage_number {
-  font-size: 70px; font-weight: 1000;
+.damage_number, .damage_number_2, .heel_number {
+  font-weight: bold; text-align: center;
+  margin: 0;
 
-  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
-  background-image: linear-gradient(red, 60%, yellow);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-box-decoration-break: clone;
 
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
+
+  font-size: 70px; font-weight: bolder;
+  background-image: linear-gradient(red, 60%, yellow);
 }
 
 /* 크리티컬 공격 시 뜨는 숫자 */
@@ -136,7 +148,6 @@ body {
   width: 300px;
   height: 300px;
   /* background-color: white; */
-  border: 1px solid;
   position: absolute;
   bottom: 3%;
   right: 20%;
@@ -154,54 +165,74 @@ body {
   position: relative;
 }
 
-.wrap .bottom .userhp {
-  width: 300px;
-  height: 100px;
-  position: absolute;
-  top: 0px;
-  left: 20%;
-
+.wrap .bottom .userhp,
+.wrap .bottom .monsterhp {
+  width: 300px; height: 100px;
+  position: absolute; top: 0;
   border: 1px solid black;
   border-radius: 10px;
     
   background-color: rgb(60, 67, 73);
-  box-shadow: 1px 1px 1px black;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
 }
+.wrap .bottom .userhp{
+  left: 20%;
+}
+.wrap .bottom .monsterhp {
+  right: 20%;
+}
 
-.wrap .bottom .userhp .userid {
+.wrap .bottom .userhp .useridbox,
+.wrap .bottom .monsterhp .monsteridbox {
   width: 100%;
   height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
 
-  font-size: 20px;
+.wrap .bottom .userhp .useridbox .userlevel,
+.wrap .bottom .monsterhp .monsteridbox .monsterlevel {
+  font-size: 15px; font-weight: bold;
+  color: orange;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  position: absolute; left: 10%;
+
+}
+.wrap .bottom .userhp .useridbox .userid,
+.wrap .bottom .monsterhp .monsteridbox .monsterid {
+  font-size: 15px;
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  position: absolute; left: 40%
 }
-.wrap .bottom .userhp .hpbox {
+
+.wrap .bottom .userhp .hpbox,
+.wrap .bottom .monsterhp .hpbox {
   width: 100%;
   height: 50%;
-  border: 1px solid;
+  border: 1px solid; border-radius: 10px;
   display: flex;
   background-color: rgb(233, 242, 238);
   box-shadow: 1px 1px 1px black;
 }
 
-.wrap .bottom .userhp .hpbox .hptxt {
-  width: 80px;
-  height: 100%;;
+.wrap .bottom .userhp .hpbox .hptxt,
+.wrap .bottom .monsterhp .hpbox .hptxt {
+  width: 80px; height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 15px;
+  font-size: 15px; font-weight: bold;
   color: rgb(60, 67, 73);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-.wrap .bottom .userhp .hpbox .hpbarbox {
+.wrap .bottom .userhp .hpbox .hpbarbox,
+.wrap .bottom .monsterhp .hpbox .hpbarbox {
   width: 100%;
   height: 100%;
   display: flex;
@@ -211,19 +242,11 @@ body {
   background-color: rgb(233, 242, 238);
   box-shadow: 1px 1px 1px black;
 }
-.wrap .bottom .userhp .hpbox .hpbarbox .hpbar {
-  width: 220px;
-  height: 35px;
+.wrap .bottom .userhp .hpbox .hpbarbox .hpbar,
+.wrap .bottom .monsterhp .hpbox .hpbarbox .hpbar {
+  width: 210px; height: 23px;
+  border-radius: 7px;
   background-color: rgb(240, 42, 105);
-}
-
-.wrap .bottom .monsterhp {
-  width: 300px;
-  height: 100px;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  right: 20%;
 }
 
 .wrap .bottom .atkbtn {
@@ -231,11 +254,13 @@ body {
   bottom: 30px; right: 30px;
   width: 180px;
   height: 180px;
-  background-color: antiquewhite;
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
-  border: 1px solid rgb(60, 67, 73);
+  border: 4px solid rgb(205, 205, 205);
   cursor: pointer;
   background-image: url("./img/atk_btn.png");
+  background-size: 50%;
+  background-position: center;
   background-repeat: no-repeat;
 }
 /* 아래쪽 텍스트, 버튼 끝 */
