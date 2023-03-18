@@ -1,14 +1,13 @@
+// 인벤 여는 함수
 function openInven() {
-    let popup = document.querySelector('.inventory');
+    let popup = document.querySelector('.inven-wrap');
     console.log(popup);
     
-    // classList(배열 형태로) : 메소드 사용, 더 편리함
-    popup.classList.add('is-active');
+    let strArr = popup.className.split(" ");
 
-    // 메소드 사용 조건 추가
-    if(popup.classList.contains("is-active")) { // 클래스가 있으면 제거
+    if(strArr.indexOf("is-active") != -1) {
         popup.classList.remove("is-active");
-    }else { // 클래스가 없으면 추가
+    }else {
         popup.classList.add("is-active");
     }
 }
