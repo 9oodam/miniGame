@@ -89,6 +89,12 @@ function choiceClose() {
   }
 }
 
+function monrere(id) {
+  this.id = id;
+  monsterreset();
+  monsterspown(id);
+}
+
 function monsterspown(mon_num) {
   choiceOpen();
   let mon = mon_num;
@@ -210,7 +216,7 @@ function atk() {
     if (user.hp <= 0) {
       loserpop();
     }
-  }, 2000);
+  }, 100);
 
   turncnt++;
 }
@@ -232,7 +238,7 @@ function cri_num(dmg) {
     document.querySelector(".number").innerHTML = "";
     criticalNum.classList.remove("damage_number");
     criticalNum.classList.remove("vibration");
-  }, 2000);
+  }, 100);
 }
 
 function cri_num2(dmg) {
@@ -251,7 +257,7 @@ function cri_num2(dmg) {
     document.querySelector(".critical").innerHTML = "";
     criticalNum.classList.remove("damage_number_critical");
     criticalNum.classList.remove("vibration");
-  }, 2000);
+  }, 100);
 }
 
 function miss(dmg) {
@@ -269,7 +275,7 @@ function miss(dmg) {
   setTimeout(() => {
     document.querySelector(".number").innerHTML = "";
     criticalNum.classList.remove("miss_number");
-  }, 2000);
+  }, 100);
 }
 
 let useratkran = 0;
@@ -314,7 +320,8 @@ function winnerpop() {
 // 유저가 이겼을때 보상 끝
 
 // 다음 레벨 시작
-function nextlevel() {
+function nextlevel(id) {
+  this.id = id;
   let next = document.querySelector(".win").classList.remove("winner");
   let mgethpbox = document.querySelector("#monhpbarbox");
   let mhpdate = `<div class="hpbar" style="width: 100%"></div>`;
@@ -328,14 +335,7 @@ function nextlevel() {
 
   turncnt = 0;
 
-  monster = [];
-  monsterimg = document.querySelector(".monster").classList.remove("slimeimg");
-  monsterimg = document.querySelector(".monster").classList.remove("orangeimg");
-  monsterimg = document.querySelector(".monster").classList.remove("wolfimg");
-  monsterimg = document.querySelector(".monster").classList.remove("dragonimg");
-  monsterimg = document.querySelector(".monster").classList.remove("bossimg");
-
-  monsterspown();
+  monsterspown(id);
   console.log("=============================유저 체력 : ", user.hp);
 }
 
@@ -438,3 +438,12 @@ function userspown() {
 
 console.log(user);
 // 유저 레벨 관련 끝
+
+function monsterreset() {
+  monster = [];
+  monsterimg = document.querySelector(".monster").classList.remove("slimeimg");
+  monsterimg = document.querySelector(".monster").classList.remove("orangeimg");
+  monsterimg = document.querySelector(".monster").classList.remove("wolfimg");
+  monsterimg = document.querySelector(".monster").classList.remove("dragonimg");
+  monsterimg = document.querySelector(".monster").classList.remove("bossimg");
+}
