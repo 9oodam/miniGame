@@ -1,88 +1,174 @@
 
 
+// 📘 전역변수 모음 
 
-// 📘 [조각기능] 회원가입 기능 
+let objArr = []
+let objArrLogin = []
+
+
+
+
+// 📘 [조각기능] 회원가입 버튼 누르면 > 팝업 뜨게 하기 
 
 function popupCreateId() {
-    
-    alert ("자, 회원가입 진행!")
 
-let popupCreate = document.querySelector('.popup-user-join-area');
+    // alert("자, 회원가입 진행!")
 
-console.log(popupCreate)
+    let popupCreate = document.querySelector(".popup-user-join-area");
 
-if (popupCreate.classList.contains("is-active")) {
-    popupCreate.classList.remove("is-active");
-} else {
-    popupCreate.classList.add("is-active")
+    console.log(popupCreate)
+
+    if (popupCreate.classList.contains("is-active")) {
+
+        popupCreate.classList.remove("is-active");
+
+    } else {
+
+        popupCreate.classList.add("is-active");
+
+    }
 }
+
+
+// 📘 [조각기능] 회원가입 창에서, 계정, 비번 입력하면 > 객체에 받아오기 
+
+// 여기에, 한명 한명의 가입 정보를 담을 것 임. 
+// let objArr = [] ✅ 맨 위로 이동
+
+// 객체를 만드는 생성함수 정의
+function create(_id, _pw1st, _pw2nd, _name, _male_checked,_female_checked, _birthday ) {
+    this.id = _id;
+    this.pw1st = _pw1st;
+    this.pw2nd = _pw2nd;
+    this.name = _name;
+    this.male_checked = _male_checked;
+    this.female_checked = _female_checked;
+    this.birthday = _birthday;
+}
+
+
+// 입력한
+function addArr () {
+
+    // 팝업 부분 가져오기 
+    let popupUser_id = document.querySelector(".userid-email");
+    let popupUser_pw1st = document.querySelector(".user-pw1-email");
+    let popupUser_pw2nd = document.querySelector(".user-pw2-email");
+    let popupUser_name = document.querySelector(".user-name");
+    let popupUser_male = document.querySelector(".male_checked");
+    let popupUser_female = document.querySelector(".female_checked");
+    let popupUser_birthday = document.querySelector(".user-name-text");
+    
+    // console.log(popupUserJoining)/
+
+    // console.log(popupUserJoining[0].value);
+    // console.log(popupUserJoining[1].value)
+    // console.log(popupUserJoining[2].value);
+
+    alert("팝업 부분 태그들이 다 가져와지는지 볼까")
+
+
+    // 적은 정보가 objArr 에 들어있어 ⭐⭐⭐
+    let obj = new create(popupUser_id.value, popupUser_pw1st.value, popupUser_pw2nd.value, 
+        popupUser_name.value, popupUser_male.value, popupUser_female.value, popupUser_birthday.value)
+
+    objArr.push(obj)
+    console.log(objArr)
+
+    // 회원가입할 때, id 랑 pw 만 만 뽑아보기
+    alert(objArr[0]['id'])
+    alert(objArr[0]['pw1st'])
+
+}
+
+
+// 회원가입 버튼 누르면 > 전송되게 하기 
+function submitInfo () {
+    
+    addArr();
+
+    // 제대로 다 썼는지 확인해야 함. 
+    alert("다 제대로 쓴거 맞지~ 이제 로그인 창으로 넘어간다~")
+
+    // 저장했으니까, 끄기~ 
+    popupCreateId()
+
 }
 
 
 
 
-function openPopup() { 
-    
-    // a) 1) 팝업 창 배경 2) 팝업창 디자인 3) x 자 표시 모두 popup 에 담기
-    let popup = document.querySelector(".popup-wrap");
-        //console.log(popup)  // [결과물] <div class="popup-wrap"> ... </div> 이렇게 나옴 
-
-    // b) popup-wrap 클래스가 붙은 태그에 'is-active' 클래스 붙이고, 떼기 
-        
-        // 1) classlist 사용
-        console.log(popup.classList)
-            // [해석]
-                // popup 변수 안에 어떤 클래스가 있는지 알려준다. 
-                // popup-wrap 이라는 클래스를 가진 태그에 어떤 클래스가 있는지 알려준다. 
-                // popup-wrap 와 같이 쓰여있는 것만 나오는 것 같아.
-                // 자식 태그는 안 나오는거 같아. 
-
-        if(popup.classList.contains("is-active")) {
-            popup.classList.remove("is-active");
-        } else {
-            popup.classList.add("is-active")
-        }
-            // [해석]
-            // 1. popup 변수에 있는, popup-wrap 이라는 클래스에 있는 태그에서, 클래스 리스트 중 is-active 가 있는지 확인 
-            // 2. 있으면 -> 해당 클래스를 지우고, 
-            // 3. 없으면 -> 해당 클래스를 추가해
-            // 4. 그러면, 팝업창이 뜰 것 임.  
 
 
+// 로그인 기입정보 > 객체로 만들기 
+// let objArrLogin = [] ✅ 전역 변수 탭으로 이동
 
-        // 2) className 사용
-            // " is-active" 에서 한칸 띄어야 햄 ⭐⭐⭐ 
-            // 왜냐면, 붙여서 써지면 -> 하나의 클래스로 인식 되기 때문 ⭐⭐⭐⭐⭐
-            // class 구분을 줘야 하기 때문에, ' is-active' 앞에 한칸 띄었다!!! 
-            // popup.className = popup.className + " is-active";
-
-        // 3) className 을 조건문으로 한번 해보기 
-                // 클래스가 있는지 확인하고 -> 1) 있으면 붙이지 말고 2) 없으면, 붙이자
-
-                // popup.classList.contains("is-active") : is-active 가 있는지 확인하기 
-            
-            // if (popup.classList.contains("is-active")) {
-            //     // class 가 있으면 
-
-            // } else {
-            //     // class 가 없으면! 
-
-            //     popup.className = popup.className + " is-active";
-
-            // }
-
-        // 4) 문자열 버전 
-            // let strArr = popup.className.split("");
-            // console.log()
-
-            // if (strArr.indexOf("is-active") != -1 ) {
-                // class 가 있으면 
-                // 문자열 제거해서 클래스를 지울 수 있음. 
-
-            // } else {
-                // class 가 없으면! 
-                // popup.className = popup.className + " is-active";
-            // }
-    
+function createUserLog (_id, _pw) {
+    this.id = _id;
+    this.pw = _pw;
 }
+
+function addArrUserLog() {
+
+    let userIdLoging = document.querySelector(".id-input-deco");
+    let userPwLoging = document.querySelector(".pw-input-deco");
+
+    let objUserLogin = new createUserLog(userIdLoging.value, userPwLoging.value)
+ 
+    objArrLogin.push(objUserLogin)
+
+    alert('사용자가 기입한거 가져와서 배열에 넣었어!')    
+    console.log(objArrLogin)
+    // 아웃풋 : objArrLogin 
+
+    // 값 나오는지 확인
+    alert(objArrLogin[0]['id'])
+    alert(objArrLogin[0]['pw'])
+
+}
+
+
+function idPwChecking () {
+
+    // 회원가입값이랑, 로그인 값이랑, 같은지 비교
+        // 회원가입값 
+            // objArr[0]['id']
+            // objArr[0]['pw1st']
+        // 로그인 값    
+            // objArrLogin[0]['id']
+            // objArrLogin[0]['pw']
+    
+    // 비교
+    if ( objArr[0]['id'] == objArrLogin[0]['id'] && objArr[0]['pw1st'] == objArrLogin[0]['pw'] ) {
+        alert ("회원가입값이랑 로그인이랑 같아🤩")
+    } else {
+        alert( "다시 기입해~!👏")
+    }
+
+}
+
+
+function loginProcess() {
+
+    // 로그인 한 정보를 객체로 만들기
+    addArrUserLog()
+
+    // 회원가입값이랑, 로그인 기입값이랑 같은지 확인
+    idPwChecking ()
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

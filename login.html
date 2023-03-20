@@ -8,12 +8,14 @@
     <title>login</title>
 
 
-    <link rel="stylesheet" href="09_login.css">
+    <link rel="stylesheet" href="./login.css">
 </head>
 
 <body>
 
 
+
+    
 
     <!-- 로그인 페이지 전체 배경 -->
     <div class="login-background-image-area">
@@ -31,7 +33,7 @@
                     <!-- 1) 계정 넣는 곳 -->
                     <div class="wrap-id-input-label">
 
-                        <label class="id-label-deco" for=""> <p> 계정 </p>  </label>
+                        <label class="id-label-deco" for=""> <p> 계정</p>  </label>
                         <input class="id-input-deco" type="text">
                         
                     </div>
@@ -41,10 +43,9 @@
                     <div class="wrap-pw-input-label">
 
                         <label class="pw-label-deco" for=""> <p> 비밀번호 </p>  </label>
-                        <input class="pw-input-deco" type="text">
+                        <input class="pw-input-deco" type="password">
                         
                     </div>
-
 
                 </div>
 
@@ -57,7 +58,7 @@
                     <div class="wrap-login-button">
 
                         <button class="login-button">
-                            <p class="login-button-font">로그인</p>
+                            <p class="login-button-font" onclick="loginProcess()">로그인</p>
                         </button>
 
 
@@ -160,10 +161,18 @@
 
 
     <!-- [팝업] 회원가입 -->
-    <div class="popup-user-join-area  "> 
+    <div class="popup-user-join-area"> 
 
         <!-- 회원가입 창 -->
         <div class="create-userid-area">
+            
+            <!-- 오른쪽 상단 x 표시 ✅ 닫힘 버튼 달기 -->
+            
+                <span onclick="popupCreateId()">
+    
+                </span>
+            
+            
 
             <!-- 회원가입 제목 -->  
             <div class="userid-title-container">
@@ -183,27 +192,27 @@
                 
             </div>
 
-            <!-- 아이디 -->
+            <!-- 계정 / 아이디 /  -->
             <div class="userid-create-container">
 
                 <!-- ⭐⭐⭐ 자바스크립트 input email 검색하니까 mdn 에서 나옴 -->
-                <input type="email" placeholder="이메일" class="userid-email">
+                <input type="text" placeholder="계정을 입력하세요" class="userid-email">
 
             </div>
             
             <!-- 비밀번호 1차 -->
             
             <div class="userpw-create-container">
-
+                
                 <!-- ⭐⭐⭐ 자바스크립트 input email 검색하니까 mdn 에서 나옴 -->
-                <input type="password" placeholder="비밀번호" class="userpw-email">
-
+                <input type="password" placeholder="비밀번호" class="user-pw1-email">
+                
             </div>
             
             <!-- 비밀번호 확인 2차 -->
             <div class="userpw-2nd-create-container">
 
-                <input type="password" placeholder="비밀번호 확인" class="userpw-email">
+                <input type="password" placeholder="비밀번호 확인" class="user-pw2-email">
 
             </div>
             
@@ -230,7 +239,7 @@
                 <!-- 2) 남자 체크 area -->
                 <div class="user-male-container">
 
-                    <input type="radio">
+                    <input type="radio" class="male_checked">
                     <label for=""> 남자 </label>
                     
                 </div>
@@ -238,7 +247,7 @@
                 <!-- 3) 여자 체크 area -->
                 <div class="user-female-container">
 
-                    <input type="radio">
+                    <input type="radio" class="female_checked">
                     <label for=""> 여자 </label>
 
                 </div>
@@ -253,11 +262,12 @@
                     <!-- ✅ 여기에 빨간거, 가상선택자로 해봐야 하나 ⭐⭐⭐⭐⭐ -->
                     <label for="" class="user-name-text"> 생년월일 </label>
                     
+
                 </div>
 
                 <div class="birday-choice">
 
-                    <input type="text">
+                    <input type="date">
 
                 </div>
 
@@ -267,7 +277,7 @@
 
             <div class="fin-join-container"> 
 
-                <button class="fin-join-button"> 가입하기 </button>
+                <button class="fin-join-button" onclick="submitInfo()"> 가입하기 </button>
 
             </div>
 
@@ -277,16 +287,12 @@
 
     </div>
 
+
     
-
-
-
-
-
 
 
 </body>
 
-<script src="09_login.js"></script>
+<script src="./login.js"></script>
 
 </html>

@@ -451,8 +451,36 @@ p {
 
 
 /* ------------START 팝업창으로 뜨는 회원가입 ------------------- */
-.popup-user-join-area {
+.popup-user-join-area{
 
+    /* position: fixed; */
+    /* top: -50%; */
+    /* left: -50%; */
+    /* transform: translate(-50%, -50%); */
+
+    /* 처음엔 안 보이게 해두었다가, 클릭하면, 보이게 하기  */
+    display: none;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+
+/* 함수가 보이게 될 때, 실행되는 CSS 
+    ⭐⭐⭐ 같이 있을 때 실행, 이므로, 같이 붙여 써야 함. */
+.popup-user-join-area.is-active {
+    display: block;
+    /* z-index: 1; */
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    
     width: 100vw;
     height: 100vh;
 
@@ -461,30 +489,13 @@ p {
 
     /* 가운데로 오게 하는 새로운 방법!
             ⭐ 팝업 만들기 할 때, 반드시 쓰게 됨! ⭐⭐⭐ */
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    transform: translate(0%, 0%);
 
-    /* 처음엔 안 보이게 해두었다가, 클릭하면, 보이게 하기  */
-    display: none;
+    /* position: relative; */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 
-/* 함수가 보이게 될 때, 실행되는 CSS 
-    ⭐⭐⭐ 같이 있을 때 실행, 이므로, 같이 붙여 써야 함. */
-.popup-user-join-area.is-active {
-    display: block;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
 
 
 .popup-user-join-area .create-userid-area {
@@ -495,15 +506,62 @@ p {
 
     background-color: lightyellow;
 
-    /* position: fixed;
+    position: fixed;
     top: 50%;
     left: 50%; 
-    transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
+
+    position: relative;
 
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+}
+
+
+
+/* x 자 표시 ✅ '영역' 잡기 */
+.popup-user-join-area .create-userid-area span {
+
+    background-color: red;
+
+    width: 30px;
+    height: 30px;
+
+    display: block;
+    
+    position: absolute;
+    right: 0;
+
+    cursor: pointer;
+
+}
+
+
+.popup-user-join-area .create-userid-area span::after, 
+.popup-user-join-area .create-userid-area span::before {
+
+    content: '';
+    width: 15px;
+    height: 4px;
+    background-color: blue;
+
+    border-radius: 2px;
+
+    display: block;
+
+
+    position: absolute;
+    top: 12px;
+    left: 8px;
+
+    transform: rotate(45deg);
+}
+
+/* 중복되는 것 빼고, 방향만 바꾸기, 다른 - 자 */
+.popup-user-join-area .create-userid-area span::after {
+    transform: rotate(-45deg);
 }
 
 
@@ -600,7 +658,7 @@ p {
 }
 
 
-.popup-user-join-area .create-userid-area .userpw-2nd-create-container .userpw-email {
+.popup-user-join-area .create-userid-area .userpw-create-container .user-pw1-email {
 
     width: 300px;
     height: 39px;
@@ -608,6 +666,13 @@ p {
 
 }
 
+.popup-user-join-area .create-userid-area .userpw-2nd-create-container .user-pw2-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
 
 .popup-user-join-area .create-userid-area .username-create-container {
 
