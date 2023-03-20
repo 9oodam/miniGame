@@ -323,15 +323,10 @@ function winnerpop() {
 function nextlevel(id) {
   this.id = id;
   let next = document.querySelector(".win").classList.remove("winner");
-  let mgethpbox = document.querySelector("#monhpbarbox");
-  let mhpdate = `<div class="hpbar" style="width: 100%"></div>`;
-  mgethpbox.innerHTML = mhpdate;
 
-  let gethpbox = document.querySelector("#userhpbarbox");
-  let uhp = (user.hp / maxuserhp) * 100;
-  console.log(uhp);
-  let hpdate = `<div class="hpbar" style="width: ${uhp}%"></div>`;
-  gethpbox.innerHTML = hpdate;
+  monhpbarfunc();
+
+  userhpbarfunc();
 
   turncnt = 0;
 
@@ -446,4 +441,18 @@ function monsterreset() {
   monsterimg = document.querySelector(".monster").classList.remove("wolfimg");
   monsterimg = document.querySelector(".monster").classList.remove("dragonimg");
   monsterimg = document.querySelector(".monster").classList.remove("bossimg");
+}
+
+function userhpbarfunc() {
+  let gethpbox = document.querySelector("#userhpbarbox");
+  let uhp = (user.hp / maxuserhp) * 100;
+  console.log(uhp);
+  let hpdate = `<div class="hpbar" style="width: ${uhp}%"></div>`;
+  gethpbox.innerHTML = hpdate;
+}
+
+function monhpbarfunc() {
+  let mgethpbox = document.querySelector("#monhpbarbox");
+  let mhpdate = `<div class="hpbar" style="width: 100%"></div>`;
+  mgethpbox.innerHTML = mhpdate;
 }

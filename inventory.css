@@ -1,61 +1,95 @@
 .inven-wrap {
-    width: 100vw; height: 100vh;
-    position: fixed;
-    display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: none;
 }
 
 /* 2클래스를 다 가지고 있을 경우 */
 .inven-wrap.is-active {
-    display: block;
+  display: block;
 }
 
 .inven-wrap .inven-content {
-    background-color: rgb(90, 180, 33);
-    border: 4px solid rgb(250, 250, 250);
-    border-radius: 12px;
-    width: 280px; height: 285px;
-    position: fixed;
-    top: 120px; right: 10px;
+  background-color: rgb(90, 180, 33);
+  border: 4px solid rgb(250, 250, 250);
+  border-radius: 12px;
+  width: 280px;
+  height: 285px;
+  position: fixed;
+  top: 120px;
+  right: 10px;
 }
 
 .inven-wrap .inven-content span {
-    width: 30px; height: 30px;
-    display: block; /* 안보이면 block 넣어보기 */
-    position: absolute;
-    right: 0;
-    cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: block; /* 안보이면 block 넣어보기 */
+  position: absolute;
+  right: 0;
+  cursor: pointer;
 }
 .inven-wrap .inven-content span::before,
 .inven-wrap .inven-content span::after {
-    content: '';
-    width: 15px; height: 4px;
-    background-color: rgb(250, 250, 250);
-    border-radius: 3px;
-    display: block;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    cursor: pointer;
+  content: "";
+  width: 15px;
+  height: 4px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 3px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  cursor: pointer;
 }
 .inven-wrap .inven-content span::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .inven-wrap .inven-content .item-wrap {
-    width: 260px; height: 2
-    0px;
-    position: absolute;
-    top: 30px; left: 50%;
-    transform: translate(-50%, 0%);
-    background-color: rgb(250, 250, 250);
-    border-radius: 5px;
-    padding: 5px;
+  width: 260px;
+  height: 2 0px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: rgb(250, 250, 250);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .inven-wrap .inven-content .item-wrap .item {
-    display: inline-block;
-    width: 70px; height: 70px;
-    border: 1px solid rgb(60, 67, 73);
-    border-radius: 3px;
-    margin-bottom: 5px;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border: 1px solid rgb(60, 67, 73);
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+.inven-wrap .inven-content .item-wrap .item-posion {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: black;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  background-image: url("./img/redposion.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  position: relative;
+}
+
+.inven-wrap .inven-content .item-wrap .item-posion span:after {
+  content: none;
+}
+.inven-wrap .inven-content .item-wrap .item-posion span:before {
+  content: none;
+}
+
+.inven-wrap .inven-content .item-wrap .item-posion span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
