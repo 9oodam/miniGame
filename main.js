@@ -9,7 +9,7 @@ let orange = {
   name: "mushroom",
   atk: 40,
   def: 0,
-  hp: 4000,
+  hp: 400,
   meso: 20,
 };
 let wolf = {
@@ -26,6 +26,7 @@ let user = {
   def: 10,
   hp: 2000,
   meso: 0,
+  level: 1
 };
 
 let monster = [];
@@ -37,6 +38,11 @@ let mondam = 0;
 
 const maxuserhp = user.hp;
 let maxmonsterhp;
+
+const max_slime_hp = slime.hp;
+const max_orange_hp = orange.hp;
+const max_wolf_hp = wolf.hp;
+
 
 // 몬스터 정보 시작
 
@@ -50,6 +56,10 @@ function monsterinfo(name, atk, def, hp, meso) {
 
 function monsterspown() {
   let mon = Math.floor(Math.random() * 3 + 1);
+  slime.hp = max_slime_hp;
+  orange.hp = max_orange_hp;
+  wolf.hp = max_wolf_hp;
+
   console.log(mon);
   if (mon === 1) {
     monster = slime;
@@ -64,15 +74,18 @@ function monsterspown() {
     monsterimg = document.querySelector(".monster").classList.add("wolfimg");
     maxmonsterhp = monster.hp;
   }
-  console.log(monster);
+  console.log("소환된 몬스터: " + monster);
   monstername(monster.name);
 }
+
 
 window.onload = monsterspown();
 
 // 몬스터 정보 끝
 
+
 // 공격 버튼 눌렀을때 시작
+
 function atk() {
   console.log(user);
   console.log(monster);
@@ -83,21 +96,23 @@ function atk() {
   if (usercri == 2 && user.atk - monster.def > 0) {
     console.log("유저크리티컬");
     console.log("몬스터 체력 : ", monster.hp);
-
+    
     userdam = user.atk * 2 - monster.def;
-
     monster.hp = monster.hp - userdam;
+    cri_num2(userdam);
     monhpbar(maxmonsterhp, monster.hp);
   } else if (user.atk <= monster.def) {
     console.log(
       "유저 대미지랑 몬스터 방어력이 같거나 유저대미지가 낮음 ",
       monster.hp
     );
+    miss();
   } else if (user.atk > monster.def) {
+    
     userdam = user.atk - monster.def;
     monster.hp = monster.hp - userdam;
-
     console.log("몬스터 체력 : ", monster.hp);
+    cri_num(userdam);
     monhpbar(maxmonsterhp, monster.hp);
   }
 
@@ -111,29 +126,87 @@ function atk() {
       console.log("몬스터크리티컬");
       console.log("유저 체력 : ", user.hp);
 
-      mondam = monster.atk * 2 - user.def;
-
-      user.hp = user.hp - (monster.atk * 2 - user.def);
+      monsterdam = monster.atk * 2 - user.def;
+      user.hp = user.hp - monsterdam;
+      cri_num2(monsterdam);
       userhpbar(user.hp);
     } else if (monster.atk <= user.def) {
       console.log(
         "몬스터 대미지랑 유저 방어력이 같거나 몬스터대미지가 낮음 ",
         monster.hp
       );
+      miss();
     } else if (monster.atk > user.def) {
-      mondam = monster.atk - user.def;
-      user.hp = user.hp - mondam;
+      monsterdam = monster.atk - user.def;
+      user.hp = user.hp - monsterdam;
       console.log("유저 체력 : ", user.hp);
+      cri_num(monsterdam);
       userhpbar(user.hp);
     }
 
     if (user.hp <= 0) {
       loserpop();
     }
-    console.log(user.hp);
-  }, 1000);
+  }, 3000);
 
   turncnt++;
+}
+
+function cri_num(dmg) {
+  let criticalNum = document.querySelector('.damage');
+  
+  let strArr = criticalNum.className.split(" ");
+
+  if(strArr.indexOf("damage_number") == -1) {
+      criticalNum.classList.add("damage_number");
+      criticalNum.classList.add("vibration");
+  }
+
+  document.querySelector('.number').innerHTML = dmg;
+  console.log("데미지: " + dmg);
+
+  setTimeout(() => {
+    document.querySelector('.number').innerHTML = '';
+    criticalNum.classList.remove("damage_number");
+    criticalNum.classList.remove("vibration");
+  }, 2000);
+}
+
+function cri_num2(dmg) {
+  let criticalNum = document.querySelector('.damage');
+  
+  let strArr = criticalNum.className.split(" ");
+
+  if(strArr.indexOf("damage_number_critical") == -1) {
+      criticalNum.classList.add("damage_number_critical");
+      criticalNum.classList.add("vibration");
+  }
+
+  document.querySelector('.critical').innerHTML = "CRITICAL\n" + dmg;
+
+  setTimeout(() => {
+    document.querySelector('.critical').innerHTML = '';
+    criticalNum.classList.remove("damage_number_critical");
+    criticalNum.classList.remove("vibration");
+  }, 2000);
+}
+
+function miss(dmg) {
+  let criticalNum = document.querySelector('.damage');
+  
+  let strArr = criticalNum.className.split(" ");
+
+  if(strArr.indexOf("miss_number") == -1) {
+      criticalNum.classList.add("miss_number");
+  }
+
+  document.querySelector('.number').innerHTML = "MISS";
+  console.log("데미지: " + dmg);
+
+  setTimeout(() => {
+    document.querySelector('.number').innerHTML = '';
+    criticalNum.classList.remove("miss_number");
+  }, 2000);
 }
 
 // 공격 버튼 눌렀을때 끝
@@ -150,18 +223,37 @@ function reload() {
 // 유저가 이겼을때 보상 시작
 function winnerpop() {
   let winpop = document.querySelector(".win").classList.add("winner");
+
+  // let winturn = document.querySelector(".winpopup");
   let winturn = `<span>WIN</span>\n<span>턴 수 : ${
     turncnt + 1
   }</span>\n<span>보 상 : ${
     monster.meso
-  }</span>\n<div class="rebox">\n<div class="rebtn" onclick="reload()">\n<span>다시하기</span></div></div>`;
+  }</span>\n<div class="rebox">\n<div class="rebtn" onclick="nextlevel()">\n<span>다음</span></div></div>`;
   let test = document.querySelector(".winpopup");
   let tt = (test.innerHTML = winturn);
+  // document.querySelector(".winpopup").innerHTML = winturn;
   user.meso += monster.meso;
   console.log("유저 메소 총량 : ", user.meso);
+  
+  user.level++;
   test.push(tt);
 }
 // 유저가 이겼을때 보상 끝
+
+// 다음 레벨 시작
+function nextlevel() {
+  let next = document.querySelector(".win").classList.remove("winner");
+  let mgethpbox = document.querySelector("#monhpbarbox");
+  let mhpdate = `<div class="hpbar" style="width: 100%"></div>`;
+  mgethpbox.innerHTML = mhpdate;
+  turncnt = 0;
+  monster = [];
+  monsterimg = document.querySelector(".monster").classList.remove("slimeimg");
+  monsterimg = document.querySelector(".monster").classList.remove("orangeimg");
+  monsterimg = document.querySelector(".monster").classList.remove("wolfimg");
+  monsterspown();
+}
 
 // hpbar start
 function userhpbar(hp) {
@@ -192,6 +284,7 @@ function userhpbar(hp) {
 }
 
 function monhpbar(fullhp, hp) {
+
   console.log("유저 공격 시작");
 
   let mgethpbox = document.querySelector("#monhpbarbox");
@@ -222,16 +315,18 @@ function monhpbar(fullhp, hp) {
 function monstername(monname) {
   this.monname = monname;
 
+  if(monname == "slime") {
+    monlevel = "Lv.1";
+  }else if(monname  == "mushroom") {
+    monlevel = "Lv.5";
+  }else if(monname == "wolf") {
+    monlevel = "Lv.13";
+  }
+
   let monteridboxget = document.querySelector(".monsteridbox");
   console.log(monteridboxget);
   console.log(monname);
 
-  let monidtxt = `<span class="monsterlevel">Lv.13</span>\n<span class="monsterid">${monname}</span>`;
+  let monidtxt = `<span class="monsterlevel">${monlevel}</span>\n<span class="monsterid">${monname}</span>`;
   monteridboxget.innerHTML = monidtxt;
 }
-
-// 몬스터 유저 hp 클래스 이름 다르게
-// 합쳤을때 로그인 정보 가지고 넘어왔을때 hp 바위에 유저 이름 띄우기 및 몬스터 이름 띄우기
-// 물약 눌렀을때 피차기
-// 장비 착용했을때 이미지 띄우기 및 유저 정보에 능력치 더하기
-// 유저 메소표시 위치 및 메소 증량
