@@ -33,6 +33,10 @@ body {
   display: flex;
   position: relative;
 }
+.top-wrap span {
+  font-size: 10px;
+  color: white;
+}
 
 .wrap .top .top-wrap .top-lt {
   display: flex;
@@ -40,7 +44,12 @@ body {
   top: 0;
   left: 0;
 }
-.wrap .top .top-wrap .top-lt .weapon {
+.wrap .top .top-wrap .top-lt .weapon-wrap {
+  width: 120px;
+  height: 130px;
+  display: block;
+}
+.wrap .top .top-wrap .top-lt .weapon-wrap .weapon {
   width: 100px;
   height: 100px;
   margin-top: 10px;
@@ -48,6 +57,9 @@ body {
   background-image: url("./img/buff_atk_icon.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.weapon-wrap.buff-on {
+  display: block;
 }
 .wrap .top .top-wrap .top-lt .ammor {
   width: 100px;
@@ -58,6 +70,10 @@ body {
   background-repeat: no-repeat;
   background-size: 95%;
   background-position: center;
+  display: none;
+}
+.ammor.buff-on {
+  display: block;
 }
 
 .wrap .top .top-wrap .top-rt {
@@ -92,6 +108,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+.store:hover, .inven:hover {
+  transform: scale(110%);
+}
 /* 스토어 및 인벤토리 버튼 끝 */
 
 /* 게임 메인 페이지 시작 */
@@ -120,14 +139,26 @@ body {
   width: 400px;
   height: 100px;
   position: absolute;
-  top: 20%;
-  left: 50%;
+  top: 30%;
+  left: 40%;
   transform: translate(-50%, 0%);
 }
+.vibration {
+  animation: vibration .1s infinite;
+}
+
+@keyframes vibration {
+  from {
+    transform: translate(2px);
+  }
+  to {
+    transform: translate(-2px);
+  }
+}
+
 /* 공격 시 뜨는 숫자 */
-.damage_number,
-.damage_number_2,
-.heel_number {
+.damage_number, .damage_number_critical,
+.miss_number, .heel_number {
   font-weight: bold;
   text-align: center;
   margin: 0;
@@ -145,15 +176,15 @@ body {
 }
 
 /* 크리티컬 공격 시 뜨는 숫자 */
-.damage_number_2 {
-  font-size: 80px;
-  background-image: linear-gradient(to top, white, rgb(156, 30, 156));
+.damage_number_critical {
+  font-size: 50px;
+  background-image: linear-gradient(to top, rgb(156, 30, 156), pink);
 }
 
 /* 물약 먹었을 때 뜨는 숫자 */
 .heel_number {
   font-size: 50px;
-  background-image: linear-gradient(to top, white, blue);
+  background-image: linear-gradient(to top, blue, skyblue);
 }
 
 .wrap .middle .monster {
@@ -293,6 +324,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+.atkbtn:hover {
+  transform: scale(110%);
+}
 /* 아래쪽 텍스트, 버튼 끝 */
 
 /* 유저가 졌을때 팝업창 시작 */
@@ -352,7 +386,7 @@ body {
   align-items: center;
 }
 .lose .losepopup .losepopuptitle .losetitle .losetitletop span {
-  font-size: 26px;
+  font-size: 23px;
   color: white;
   margin-left: 20px;
 }
