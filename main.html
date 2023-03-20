@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./inventory.css">
+    <link rel="stylesheet" href="./inventory.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-
-
     <!-- 게임 메인 페이지 -->
     <div class="wrap">
       <div class="top">
@@ -26,10 +24,9 @@
           <!-- 상단 오른쪽 상점 인벤 -->
           <div class="top-rt">
             <!-- 스토어 -->
-            <div class="store"></div>
+            <div class="store" onclick=""></div>
             <!-- 인벤토리 -->
-            <div class="inven" onclick="openInven()">
-            </div>
+            <div class="inven" onclick="openInven()"></div>
           </div>
         </div>
       </div>
@@ -48,37 +45,37 @@
 
       <!-- hp랑 공격 버튼 -->
       <div class="bottom">
-          <!-- 유저 hp -->
-          <div class="userhp">
-            <div class="useridbox">
-              <span class="userlevel">Lv.15</span>
-              <span class="userid">kyung12</span>
+        <!-- 유저 hp -->
+        <div class="userhp">
+          <div class="useridbox">
+            <span class="userlevel">Lv.15</span>
+            <span class="userid">kyung12</span>
+          </div>
+          <div class="hpbox">
+            <div class="hptxt">
+              <span>HP</span>
             </div>
-            <div class="hpbox">
-              <div class="hptxt">
-                <span>HP</span>
-              </div>
-              <div class="hpbarbox">
-                <div class="hpbar"></div>
-              </div>
+            <div class="hpbarbox">
+              <div class="hpbar"></div>
             </div>
           </div>
-          <!-- 몬스터 hp -->
-          <div class="monsterhp">
-            <div class="monsteridbox">
-              <span class="monsterlevel">Lv.13</span>
-              <span class="monsterid">Wolf</span>
+        </div>
+        <!-- 몬스터 hp -->
+        <div class="monsterhp">
+          <div class="monsteridbox">
+            <span class="monsterlevel">Lv.13</span>
+            <span class="monsterid">Wolf</span>
+          </div>
+          <div class="hpbox">
+            <div class="hptxt">
+              <span>HP</span>
             </div>
-            <div class="hpbox">
-              <div class="hptxt">
-                <span>HP</span>
-              </div>
-              <div class="hpbarbox">
-                <div class="hpbar"></div>
-              </div>
+            <div class="hpbarbox">
+              <div class="hpbar"></div>
             </div>
           </div>
-        <div class="atkbtn"></div>
+        </div>
+        <div class="atkbtn" onclick="atk()"></div>
       </div>
     </div>
     <!-- 인벤토리 -->
@@ -86,15 +83,52 @@
       <div class="inven-content">
         <span onclick="openInven()"></span>
         <div class="item-wrap">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 유저가 졌을때 팝업-->
+    <div class="lose">
+      <div class="losepopup">
+        <div class="losepopuptitle">
+          <div class="tombstone"></div>
+          <div class="losetitle">
+            <div class="losetitletop">
+              <span>확인을 누르시면 부활하게 됩니다.</span>
+            </div>
+            <div class="losetitlebottom">
+              <span
+                >부활을 하시면 가까운 곳에 위치한 <br />
+                안전한 마을로 이동하게 됩니다.</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="losepopupreplay">
+          <div class="replaybtn" onclick="reload()">확인</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 유저가 이겼을때 팝업 -->
+    <div class="win">
+      <div class="winpopup">
+        <!-- <span>WIN</span> -->
+        <!-- <span>턴 수 :</span> -->
+        <!-- <span>보상 :</span> -->
+        <div class="rebox">
+          <div class="rebtn" onclick="">
+            <span>다시하기</span>
+          </div>
         </div>
       </div>
     </div>
