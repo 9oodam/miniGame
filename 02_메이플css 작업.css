@@ -1,0 +1,549 @@
+@font-face {
+    font-family: "mapleLogin";
+    src: url(./font/Maplestory\ Bold.ttf) format(truetype);
+}
+
+
+/* 🟦 남아있는 여백 지우고 시작하기 */
+body {
+
+    font-family: "mapleLogin";
+
+    /* 남아있는 여백이 있어서 -> 확인하고 지워줌 */
+    margin: 0;
+    padding: 0;
+
+}
+
+/* 🟦 box 크기 잴 때, border 포함해서, 보이는대로 재기  */
+* {
+    box-sizing: border-box;
+
+}
+
+/* ------------------------------ 기본셋팅 END --------------------------- */
+
+
+/* 로그인 창 전체 영역 */
+
+.login-background-image-area {
+
+    /* 브라우저에서 보이는대로 크기를 설정하기 
+        [실익]
+            1. 화면이 반응형으로 보이게 된다. 어떻게 하건, 그 비율을 유지하게 된다. */
+    width: 100vw;
+    height: 100vh;
+    /* 왼쪽에서 떨어지는 수치, 위에서 떨어지는 수치는 변경 가능 ✅✅✅✅✅  */
+    /* left: 50%; */
+    /* top: 50%; */
+
+    /* transform: translate(); */
+
+    background-color: antiquewhite;
+
+    /* 항상 그 자리에 고정 
+        [궁금한 점] 이건 왜 필요하지? */
+    /* position: fixed; */
+
+
+}
+
+
+
+.backgroundImage-container {
+
+    position: relative;
+}
+
+
+
+
+.login-background-image-area .backgroundImage-container {
+
+    width: 100vw;
+    height: 100vh;
+    /* top: 0; */
+    /* left: 0; */
+
+    /* background-size: cover; */
+    position: relative;
+
+}
+
+
+
+.login-background-image-area .backgroundImage-content {
+
+    width: 100vw;
+    height: 100vh;
+
+    /* object-fit: contain; */
+    object-fit: cover;
+    /* transform: translate(-10%, -10%); */
+
+
+    position: absolute;
+    /* left: 380px; */
+
+    /* top: 150px; */
+
+    /* transform: scale(1.1); */
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area {
+
+    width: 600px;
+    height: 400px;
+
+
+    background-color: rgb(221, 221, 204);
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 12px;
+    border: 0.8px solid rgba(0, 0, 0, 0.897);
+
+}
+
+
+.backgroundImage-container .login-maple-concept-area .login-mapletab-area {
+
+    width: 600px;
+    height: 60px;
+
+    background-color: teal;
+}
+
+
+.backgroundImage-container .login-maple-concept-area .login-mapletab-area .mapletab-leaf-title .mapletab-leaf {
+
+    width: 40px;
+    height: 40px;
+
+    transform: rotate(80deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area .login-id-pw-login-area {
+
+    width: 600px;
+    height: 130px;
+
+    background-color: indianred;
+
+}
+
+.backgroundImage-container .login-maple-concept-area .login-idsave-pwsearch-findpw-area {
+
+    width: 600px;
+    height: 55px;
+
+    background-color: silver;
+
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area .login-idcreate-homepage-exit-area {
+
+    width: 600px;
+    height: 80px;
+
+    background-color: hotpink;
+
+}
+
+
+
+
+/* 탭 디자인 */
+
+/* 탭 전체 스타일 */
+.backgroundImage-container .tabs {
+    position: absolute;
+    
+    width: 600px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: rgb(221, 221, 204);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: row;
+}
+
+/* 탭 스타일 */
+.tabs .tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    /* border-bottom: 3px solid #333333; */
+    /* background-color: #f8f8f8; */
+    /* line-height: 50px; */
+    /* font-size: 26px; */
+    /* text-align: center; */
+    /* color: #333333; */
+
+
+    border-bottom: 1px solid gray;
+    border-left: 3px solid #333333;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    box-shadow: 1px -3px 5px 0px ;
+
+    /* border: 3px solid #333333; */
+
+    color: #333333;
+    background-color: rgb(81, 64, 47);
+    color: rgb(221, 221, 204);
+
+
+
+    /* display: block; */
+    float: left;
+    
+
+    /* text-align: center; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    /* border-top-right-radius: 12px; */
+    /* border-top-left-radius: 12px; */
+    /* transition: all 0.2s ease; */
+}
+
+.tabs .tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    /* border-bottom: 3px solid #333333; */
+    /* background-color: #f8f8f8; */
+    /* line-height: 50px; */
+    /* font-size: 26px; */
+    /* text-align: center; */
+    /* color: #333333; */
+
+
+    border-bottom: 1px solid gray;
+    border-left: 3px solid #333333;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    box-shadow: 1px -3px 5px 0px ;
+
+    /* border: 3px solid #333333; */
+
+    color: #333333;
+    background-color: rgb(81, 64, 47);
+    color: rgb(221, 221, 204);
+
+
+
+    display: block;
+    float: left;
+    display: flex;
+
+
+    text-align: center;
+    
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    /* transition: all 0.2s ease; */
+}
+
+.tab_item:hover {
+    opacity: 0.75;
+}
+
+/* 라디오 버튼 UI삭제*/
+input[name="tab_item"] {
+    display: none;
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+    /* display: none; */
+    /* padding: 40px 40px 0; */
+    clear: both;
+    overflow: hidden;
+
+    /* position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center; */
+}
+
+
+.maple_leaf_red {
+
+    width: 40px;
+    height: 40px;
+}
+
+.nexon-logo {
+
+    width: 40px;
+    height: 40px;
+    
+}
+
+
+/* 선택 된 탭 콘텐츠를 표시 */
+#all:checked~#all_content,
+#programming:checked~#programming_content,
+#design:checked~#design_content {
+    display: block;
+}
+
+/* 선택된 탭 스타일 */
+.tabs input:checked+.tab_item {
+    background-color: rgb(221, 221, 204);
+    color: rgba(0, 0, 0, 0.89);
+}
+
+
+
+
+
+/* 탭 전체 스타일 */
+.tabs {
+    /* margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin: 0 auto;
+     */
+
+}
+  
+  /* 탭 스타일 */
+  .tab_item {
+    /* width: calc(100%/3);
+    height: 50px;
+    
+    border-bottom: 3px solid #333333;
+    background-color: rgb(81, 64, 47);
+    color: #333333;
+
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    
+    
+    display: block;
+    float: left;
+    
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease; */
+
+  }
+  .tab_item:hover {
+    /* opacity: 0.75; */
+  }
+  
+  /* 라디오 버튼 UI삭제*/
+  /* input[name="tab_item"] { */
+    /* display: none; */
+  }
+  
+  /* 탭 컨텐츠 스타일 */
+  .tab_content {
+    /* display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    overflow: hidden; */
+  }
+  
+  
+  /* 선택 된 탭 콘텐츠를 표시 */
+  /* #all:checked ~ #all_content,
+  #programming:checked ~ #programming_content,
+  #design:checked ~ #design_content { */
+    /* display: block; */
+  
+  
+  /* 선택된 탭 스타일 */
+  /* .tabs input:checked + .tab_item { */
+    /* background-color: #333333; */
+    /* background-color: rgb(221, 221, 204);
+    color: rgb(81, 64, 47);
+  } */
+
+
+/* ; */
+/* ------------- 하위 요소 디자인  ----------------- */
+
+
+.login-id-pw-area {
+    width: 580px;
+    height: 170px;
+    
+    background-color: indigo;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+
+.login-left-area  {
+    
+    width: 400px;
+    height: 150px;
+    background-color: greenyellow;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+
+
+.id-input-deco {
+    width: 370px;
+    height: 45px;
+
+    background-color: rgb(204, 183, 153);
+    color: rgb(178, 150, 122);
+}
+
+.pw-input-deco {
+    margin-top: 5px;
+
+    width: 370px;
+    height: 45px;
+    background-color: rgb(204, 183, 153);
+    color: rgb(178, 150, 122);
+}
+
+
+.login-right-area {
+
+    width: 120px;
+    height: 120px;
+
+    background-color: bisque;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button{
+    background-color: rgb(204, 163, 129);
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-button-font {
+    /* font-size: 20px; */
+    /* font-weight: 700; */
+    color: whitesmoke;
+    /* text-shadow:-3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000; */
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
+}
+
+
+.idSave-findIdPw {
+
+    width: 580px;
+    height: 60px;
+
+    background-color: floralwhite;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: relative;
+}
+
+
+.idSave_area {
+    width: 100px;
+    height: 30px;
+
+    background-color: green;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    left: 30px;
+
+}
+
+
+.findId_area {
+    width: 100px;
+    height: 30px;
+
+    background-color: blue;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    left: 240px;
+
+}
+
+
+
+.findPw_area {
+    width: 120px;
+    height: 30px;
+
+    background-color: yellow;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    left: 430px;
+
+
+}
