@@ -16,7 +16,10 @@
           <!-- 상단 왼쪽 무기랑 방어구 -->
           <div class="top-lt">
             <!-- 무기이미지 -->
-            <div class="weapon"></div>
+            <div class="weapon-wrap">
+              <div class="weapon"></div>
+              <span>ATK +10</span>
+            </div>
             <!-- 방어이미지 -->
             <div class="ammor"></div>
           </div>
@@ -37,7 +40,8 @@
         <div class="user"></div>
         <!-- 대미지 -->
         <div class="damage">
-          <p class="damage_number">2000</p>
+          <div class="critical"></div>
+          <div class="number"></div>
         </div>
         <!-- 몬스터 이미지 -->
         <div class="monster"></div>
@@ -71,13 +75,15 @@
               <span>HP</span>
             </div>
             <div class="hpbarbox">
-              <div class="hpbar"></div>
+              <div class="hpbar">
+              </div>
             </div>
           </div>
         </div>
         <div class="atkbtn" onclick="atk()"></div>
       </div>
     </div>
+
     <!-- 인벤토리 -->
     <div class="inven-wrap">
       <div class="inven-content">
@@ -126,7 +132,7 @@
         <!-- <span>턴 수 :</span> -->
         <!-- <span>보상 :</span> -->
         <div class="rebox">
-          <div class="rebtn" onclick="">
+          <div class="rebtn" onclick="reload()">
             <span>다시하기</span>
           </div>
         </div>
