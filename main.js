@@ -74,18 +74,18 @@ function monsterinfo(name, atk, def, hp, meso) {
 }
 
 function choiceOpen() {
-  let popup = document.querySelector('.choice');
+  let popup = document.querySelector(".choice");
   popup.classList.remove("choice-close");
 }
 
 function choiceClose() {
-  let popup = document.querySelector('.choice');
+  let popup = document.querySelector(".choice");
   console.log(popup);
-  
+
   let strArr = popup.className.split(" ");
 
-  if(strArr.indexOf("choice-close") == -1) {
-      popup.classList.add("choice-close");
+  if (strArr.indexOf("choice-close") == -1) {
+    popup.classList.add("choice-close");
   }
 }
 
@@ -100,7 +100,7 @@ function monsterspown(mon_num) {
   dragon.hp = max_dragon_hp;
   boss.hp = max_boss_hp;
 
-  if(mon == 1) {
+  if (mon == 1) {
     monster = slime;
     monsterimg = document.querySelector(".monster").classList.add("slimeimg");
     maxmonsterhp = monster.hp;
@@ -118,13 +118,13 @@ function monsterspown(mon_num) {
     maxmonsterhp = monster.hp;
     monmindam = Math.floor(monster.atk - monster.atk / 10);
     monster.atk = Math.floor(monster.atk - monster.atk / 10);
-  } else if(mon == 4) {
+  } else if (mon == 4) {
     monster = dragon;
     monsterimg = document.querySelector(".monster").classList.add("dragonimg");
     maxmonsterhp = monster.hp;
     monmindam = Math.floor(monster.atk - monster.atk / 10);
     monster.atk = Math.floor(monster.atk - monster.atk / 10);
-  } else if(mon == 5) {
+  } else if (mon == 5) {
     monster = boss;
     monsterimg = document.querySelector(".monster").classList.add("bossimg");
     maxmonsterhp = monster.hp;
@@ -404,9 +404,9 @@ function monstername(monname) {
     monlevel = "Lv.5";
   } else if (monname == "wolf") {
     monlevel = "Lv.13";
-  }else if(monname == "dragon") {
+  } else if (monname == "dragon") {
     monlevel = "Lv.27";
-  }else if(monname == "boss") {
+  } else if (monname == "boss") {
     monlevel = "Lv.40";
   }
 
