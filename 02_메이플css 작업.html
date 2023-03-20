@@ -27,9 +27,9 @@
             <!-- 2) 로그인 창 -->
             <!-- <div class="login-maple-concept-area"> -->
 
-                <!-- a) 메이플 id -->
+            <!-- a) 메이플 id -->
 
-                <!-- <div class="login-mapletab-area">
+            <!-- <div class="login-mapletab-area">
 
                     <div class="mapletab-leaf-title">
 
@@ -41,20 +41,20 @@
 
                 </div> -->
 
-                <!-- b) id, 비번, 로그인 -->
+            <!-- b) id, 비번, 로그인 -->
 
-                <!-- <div class="login-id-pw-login-area"> -->
+            <!-- <div class="login-id-pw-login-area"> -->
 
-                <!-- </div> -->
+            <!-- </div> -->
 
-                <!-- c) id 저장, id 찾기, 비번찾기  -->
+            <!-- c) id 저장, id 찾기, 비번찾기  -->
 
-                <!-- <div class="login-idsave-pwsearch-findpw-area">
+            <!-- <div class="login-idsave-pwsearch-findpw-area">
 
                 </div> -->
 
-                <!-- d) id 만들기, 홈페이지, 끝내기 -->
-                <!-- <div class="login-idcreate-homepage-exit-area">
+            <!-- d) id 만들기, 홈페이지, 끝내기 -->
+            <!-- <div class="login-idcreate-homepage-exit-area">
 
                 </div>
 
@@ -63,93 +63,81 @@
 
 
             <!-- 2) tab 테스트 -->
-                    <div class="tabs">
+            <div class="tabs">
 
-                    <input id="all" type="radio" name="tab_item" checked>
-                    <label class="tab_item" for="all">
-                        <img class="maple_leaf_red" src="https://cdn-icons-png.flaticon.com/512/2831/2831965.png " alt="">
-                        <h2>메이플ID</h2>   
-                    
-                    </label>
-                    
-                    <input id="programming" type="radio" name="tab_item">
-                    <label class="tab_item" for="programming">                        
-                        <img class="nexon-logo" src="./img/icons8-nexon-launcher-64.png" alt="">
-                        <h2>NexonID </h2></label>
+                <input id="all" type="radio" name="tab_item" checked>
+                <label class="tab_item" for="all">
+                    <img class="maple_leaf_red" src="https://cdn-icons-png.flaticon.com/512/2831/2831965.png " alt="">
+                    <h2>메이플ID</h2>
 
-                    <!-- 메이플 id 탭 -->
-                    <div class="tab_content" id="all_content">
+                </label>
 
-                            <!-- 1. id, pw, 로그인 버튼 영역 -->
-                            <div class="login-id-pw-area">
+                <input id="programming" type="radio" name="tab_item">
+                <label class="tab_item" for="programming">
+                    <img class="nexon-logo" src="./img/icons8-nexon-launcher-64.png" alt="">
+                    <h2>NexonID </h2>
+                </label>
 
-                                <!-- 1) id/pw 넣는 곳 -->
-                                <div class="login-left-area">
+                <!-- 메이플 id 탭 -->
+                <div class="tab_content" id="all_content">
 
-                                    <!-- a) 계정 넣기 -->
-                                    <input type="text" placeholder="메이플ID" class="id-input-deco">
-                                    
-                                    <!-- b) 비번 -->
-                                    <input type="password" placeholder="비밀번호" class="pw-input-deco">
-                                    
+                    <!-- 1. id, pw, 로그인 버튼 영역 -->
+                    <div class="login-id-pw-area">
 
-                                </div>
+                        <!-- 1) id/pw 넣는 곳 -->
+                        <div class="login-left-area">
 
-                                <!-- 2) 로그인 버튼 클릭 -->
-                                <div class="login-right-area">
-                                
-                                    <!-- 실제 로그인 버튼 -->
-                                    <button class="login-button">
-                                        <h2 class="login-button-font" onclick="loginProcess()"> LOGIN </h2>
-                                    </button>
-            
-                                    
-                                </div>
+                            <!-- a) 계정 넣기 -->
+                            <input type="text" placeholder="메이플ID" class="id-input-deco">
 
-                            
-                            </div>
-
-                            
-                            <!-- 2. id 저장, id 찾기, pw 찾기 -->
-                            <div class="idSave-findIdPw">
-                            
-                                <!-- a) id 저장 -->
-                                <div class="idSave_area"> 
-                                    <input type="checkbox">
-                                    <label for=""> <h2> ID저장</h2> </label>
-                                </div>
-                
-                                <!-- b) 계정 찾기 -->
-                                <div class="findId_area">       
-                                    <input type="checkbox">
-                                    <label for=""> <h2> ID찾기</h2> </label>               
-                                </div>
-
-                                <!-- c) 비번 찾기 -->
-                                <div class="findPw_area">       
-                                    <input type="checkbox">
-                                    <label for=""> <h2> 비번찾기</h2> </label>               
-                                </div>                                
-                            </div>
+                            <!-- b) 비번 -->
+                            <input type="password" placeholder="비밀번호" class="pw-input-deco">
 
 
+                        </div>
 
+                        <!-- 2) 로그인 버튼 클릭 -->
+                        <div class="login-right-area">
 
+                            <!-- 실제 로그인 버튼 -->
+                            <button class="login-button" onclick="loginProcess()">
+                            </button>
+                            <label class="login-button-font" for=""> <h2> LOGIN</h2></label>
+                            <!-- <h2 class="login-button-font" onclick="loginProcess()">  </h2>/ -->
 
-
-                            </div>
-
-
-                            <!-- 3. id 만들기, 홈페이지, 끝내기  -->
-                    </div>
-
-                    <!-- 넥슨 id 탭 -->
-                    <div class="tab_content" id="programming_content">
-                        넥슨 계정
+                        </div>
 
 
                     </div>
 
+
+                    <!-- 2. id 저장, id 찾기, pw 찾기 -->
+                    <div class="idSave-findIdPw">
+
+                        <!-- a) id 저장 -->
+                        <div class="idSave_area">
+                            <input type="checkbox">
+                            <label for="">
+                                <h2> ID저장</h2>
+                            </label>
+                        </div>
+
+                        <!-- b) 계정 찾기 -->
+                        <div class="findId_area">
+                            <input type="checkbox">
+                            <label for="">
+                                <h2> ID찾기</h2>
+                            </label>
+                        </div>
+
+                        <!-- c) 비번 찾기 -->
+                        <div class="findPw_area">
+                            <input type="checkbox">
+                            <label for="">
+                                <h2> 비번찾기</h2>
+                            </label>
+                        </div>
+                    </div>
 
 
 
@@ -159,7 +147,56 @@
                 </div>
 
 
+                <!-- 3. id 만들기, 홈페이지, 끝내기  -->
+                <div class="join-homepage-exit">
+
+                    <!-- 1) id 만들기  -->
+
+                    <label class="join-button-font" for=""> ID 만들기 </label>
+
+                    <button class="join-button" onclick="popupCreateId()">
+                    </button>
+
+
+                    <!-- 2) 홈페이지 -->
+                    <label class="homepage-button-font" for=""> 홈페이지 </label>
+                    <button class="homepage-button" onclick="location.href='https://maplestory.nexon.com/Home/Main'" >
+                    </button>
+                    
+                    
+                    <!-- 3) 끝내기 -->
+                    <label class="exit-button-font" for=""> 끝내기 </label>
+                    <button class="exit-button" onclick="location.href='https://www.nexon.com/Home/Game'" >
+                    </button>
+
+
+                </div>
+
+
             </div>
+
+
+
+
+        </div>
+
+        <!-- 넥슨 id 탭 -->
+        <!-- <div class="tab_content" id="programming_content"> -->
+    
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    </div>
 
 
 

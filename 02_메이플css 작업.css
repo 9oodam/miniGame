@@ -175,8 +175,8 @@ body {
 .backgroundImage-container .tabs {
     position: absolute;
     
-    width: 600px;
-    height: 400px;
+    width: 500px;
+    height: 310px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -401,10 +401,10 @@ input[name="tab_item"] {
 
 
 .login-id-pw-area {
-    width: 580px;
-    height: 170px;
+    width: 500px;
+    height: 120px;
     
-    background-color: indigo;
+    /* background-color: indigo; */
 
     display: flex;
     align-content: center;
@@ -417,9 +417,9 @@ input[name="tab_item"] {
 
 .login-left-area  {
     
-    width: 400px;
-    height: 150px;
-    background-color: greenyellow;
+    width: 350px;
+    height: 110px;
+    /* background-color: greenyellow; */
 
     display: flex;
     justify-content: center;
@@ -435,7 +435,7 @@ input[name="tab_item"] {
     height: 45px;
 
     background-color: rgb(204, 183, 153);
-    color: rgb(178, 150, 122);
+    color: rgb(48, 29, 9);
 }
 
 .pw-input-deco {
@@ -444,7 +444,7 @@ input[name="tab_item"] {
     width: 370px;
     height: 45px;
     background-color: rgb(204, 183, 153);
-    color: rgb(178, 150, 122);
+    color: rgb(48, 29, 10);
 }
 
 
@@ -453,7 +453,7 @@ input[name="tab_item"] {
     width: 120px;
     height: 120px;
 
-    background-color: bisque;
+    /* background-color: bisque; */
 
     display: flex;
     justify-content: center;
@@ -475,21 +475,23 @@ input[name="tab_item"] {
 }
 
 .login-button-font {
-    /* font-size: 20px; */
+    font-size: 18px;
     /* font-weight: 700; */
     color: whitesmoke;
     /* text-shadow:-3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000; */
-    -webkit-text-stroke: 1px rgb(81, 64, 47);
+    -webkit-text-stroke: 2px rgb(81, 64, 47);
+
+    position: absolute;
 
 }
 
 
 .idSave-findIdPw {
 
-    width: 580px;
-    height: 60px;
+    width: 500px;
+    height: 38px;
 
-    background-color: floralwhite;
+    /* background-color: yellowgreen; */
 
     display: flex;
     justify-content: space-evenly;
@@ -503,14 +505,14 @@ input[name="tab_item"] {
     width: 100px;
     height: 30px;
 
-    background-color: green;
+    /* background-color: green; */
     
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     position: absolute;
-    left: 30px;
+    left: 15px;
 
 }
 
@@ -519,14 +521,14 @@ input[name="tab_item"] {
     width: 100px;
     height: 30px;
 
-    background-color: blue;
+    /* background-color: blue; */
     
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     position: absolute;
-    left: 240px;
+    left: 190px;
 
 }
 
@@ -536,14 +538,106 @@ input[name="tab_item"] {
     width: 120px;
     height: 30px;
 
-    background-color: yellow;
+    /* background-color: yellow; */
     
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     position: absolute;
-    left: 430px;
+    left: 350px;
 
+
+}
+
+
+
+.join-homepage-exit {
+
+    width: 580px;
+    height: 90px;
+
+    /* background-color: hotpink;   */
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.join-button {
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
+
+    width: 100px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.join-button-font {
+    position: absolute;
+    left: 60px;
+    font-size: 20px;
+    font-weight: 700; 
+    color: whitesmoke; 
+
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
+}
+
+.exit-button{
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
+
+    width: 100px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.exit-button-font {
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+    
+    position: absolute;
+    left: 375px;
+
+}
+
+
+
+.homepage-button {
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
+
+    width: 100px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.homepage-button-font {
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+    position: absolute;
+    left: 215px;
+
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
 
 }
