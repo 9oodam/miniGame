@@ -18,13 +18,13 @@
           <div class="top-lt">
             <!-- 무기이미지 -->
             <div class="weapon-wrap">
-              <div class="weapon"></div>
-              <span>ATK +10</span>
+              <!-- <div class="weapon"></div>
+              <span>ATK +10</span> -->
             </div>
             <!-- 방어이미지 -->
             <div class="ammor-wrap">
-              <div class="ammor"></div>
-              <span>DEF +10</span>
+              <!-- <div class="ammor"></div>
+              <span>DEF +10</span> -->
             </div>
           </div>
 
@@ -191,7 +191,8 @@
         </div>
 
         <div class="flex-container01 tab-container">
-          <div class="flex-item">
+          <!--  -->
+          <div class="flex-item" onclick="swordguma()">
             <div class="imgsize2 img4"></div>
 
             <div class="item-align">
@@ -203,7 +204,7 @@
             </div>
           </div>
 
-          <div class="flex-item">
+          <div class="flex-item" onclick="ammorguma()">
             <div class="imgsize2 img5"></div>
             <div class="item-align">
               <div class="item-name">냄비뚜껑 방패</div>
@@ -267,18 +268,10 @@
     <div class="inven-wrap">
       <div class="inven-content">
         <span onclick="openInven()"></span>
-        <div class="item-wrap">
+        <div class="item-wrap" id="inventory">
           <div class="item-posion" onclick="heal()">
             <span>1</span>
           </div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
         </div>
       </div>
     </div>
