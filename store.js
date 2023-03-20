@@ -8,7 +8,7 @@ function openstore() {
   } else {
     ostore.classList.add("is-active");
     console.log("상점 나오게 하기");
-    storecne++;
+    storecnt++;
   }
 }
 
