@@ -70,30 +70,44 @@ function buyItem(id) {
   if(id == "sword") {
     item = sword;
     console.log(item);
+    calculate(id);
   } 
   if(id == "shield") {
     item = shield;
     console.log(item);
+    calculate(id);
   }
   if(id == "red") {
     item = red;
     console.log(item);
+    calculate(id);
   }
   console.log("아이템 가격: " + item.price);
-
-  calculate();
-  moveItem();
 }
 
-function calculate() {
+function calculate(id) {
   if(user.meso >= item.price) {
+    if(id == "sword") {
+      swordguma()
+    }
+    if(id == "shield") {
+      ammorguma()
+    }
+    if(id == "red") {
+      posionea++;
+      let posion = document.querySelector('.item-posion');
+      let posion2 = `<span>${posionea}</span>`;
+      posion.innerHTML = posion2;      
+    }
+
     user.meso = user.meso - item.price;
     console.log(user.meso);
+
+    let totalmeso = document.querySelector('.mesos');
+    let totalmeso2 = `<div class="mesoimg"></div><span>${user.meso}</span>`;
+    totalmeso.innerHTML = totalmeso2;
+
   } else if(user.meso <= item.price) {
     alert("메소가 부족합니다.");
   }
-}
-
-function moveItem() {
-
 }

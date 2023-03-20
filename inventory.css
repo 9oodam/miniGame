@@ -49,7 +49,7 @@
 
 .inven-wrap .inven-content .item-wrap {
   width: 260px;
-  height: 2 0px;
+  height: 240px;
   position: absolute;
   top: 30px;
   left: 50%;
@@ -90,6 +90,44 @@
 
 .inven-wrap .inven-content .item-wrap .item-posion span {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
+  height: 20px;
+  width: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inven-wrap .inven-content .item-wrap .item-sword {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  background-image: url("./img/weapon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.sword-active {
+  border: 1px solid green;
+}
+
+.inven-wrap .inven-content .item-wrap .item-ammor {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  background-image: url("./img/ammor.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.ammor-active {
+  border: 1px solid green;
 }
