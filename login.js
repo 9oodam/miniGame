@@ -7,7 +7,9 @@ let objArrLogin = []
 
 
 
+
 // 📘 [조각기능] 회원가입 버튼 누르면 > 팝업 뜨게 하기 
+
 function popupCreateId() {
 
     // alert("자, 회원가입 진행!")
@@ -28,12 +30,12 @@ function popupCreateId() {
 }
 
 
-// 📘 [조각기능] 회원가입 창에서 정보받아와서 > 객체에 담기
+// 📘 [조각기능] 회원가입 창에서, 계정, 비번 입력하면 > 객체에 받아오기 
 
 // 여기에, 한명 한명의 가입 정보를 담을 것 임. 
-    // [여기에서 필요한 전역변수] let objArr = [] ✅ 맨 위로 이동
+// let objArr = [] ✅ 맨 위로 이동
 
-// 🟦 객체를 만드는 생성함수 정의
+// 객체를 만드는 생성함수 정의
 function create(_id, _pw1st, _pw2nd, _name, _male_checked,_female_checked, _birthday ) {
     this.id = _id;
     this.pw1st = _pw1st;
@@ -45,7 +47,7 @@ function create(_id, _pw1st, _pw2nd, _name, _male_checked,_female_checked, _birt
 }
 
 
-// 🟦 회원가입에서 생성한 정보를 '객체'로 만들고 > '배열' 로 output 내기 
+// 입력한
 function addArr () {
 
     // 팝업 부분 가져오기 
@@ -73,14 +75,14 @@ function addArr () {
     objArr.push(obj)
     console.log(objArr)
 
-    // 회원가입할 때, id 랑 pw 만 만 뽑아보기 ⭐⭐⭐ / 이 정보랑 가입정보랑 비교
+    // 회원가입할 때, id 랑 pw 만 만 뽑아보기
     alert(objArr[0]['id'])
     alert(objArr[0]['pw1st'])
 
 }
 
 
-// 🟦 회원가입할 때, 회원가입 버튼 누르면 > 전송되게 하기 
+// 회원가입 버튼 누르면 > 전송되게 하기 
 function submitInfo () {
     
     addArr();
@@ -95,8 +97,11 @@ function submitInfo () {
 
 
 
-// 🟦 로그인 기입정보 받아서 > '객체'로 만들고 > '배열' 에 담기 
-    // let objArrLogin = [] ✅ 전역 변수 탭으로 이동
+
+
+
+// 로그인 기입정보 > 객체로 만들기 
+// let objArrLogin = [] ✅ 전역 변수 탭으로 이동
 
 function createUserLog (_id, _pw) {
     this.id = _id;
@@ -109,21 +114,20 @@ function addArrUserLog() {
     let userPwLoging = document.querySelector(".pw-input-deco");
 
     let objUserLogin = new createUserLog(userIdLoging.value, userPwLoging.value)
-
+ 
     objArrLogin.push(objUserLogin)
 
     alert('사용자가 기입한거 가져와서 배열에 넣었어!')    
     console.log(objArrLogin)
     // 아웃풋 : objArrLogin 
 
-    // 값 나오는지 확인 ⭐⭐⭐ (비교에 사용!)
+    // 값 나오는지 확인
     alert(objArrLogin[0]['id'])
     alert(objArrLogin[0]['pw'])
 
 }
 
 
-// 🟦 회원가입 때 넣은 값과, 로그인 때, 넣은 값과 비교 
 function idPwChecking () {
 
     // 회원가입값이랑, 로그인 값이랑, 같은지 비교
@@ -136,7 +140,7 @@ function idPwChecking () {
     
     // 비교
     if ( objArr[0]['id'] == objArrLogin[0]['id'] && objArr[0]['pw1st'] == objArrLogin[0]['pw'] ) {
-        alert ("회원가입값이랑 로그인이랑 같아🤩")
+        alert ("회원가입값이랑 로그인이랑 같아~!🤩")
     } else {
         alert( "다시 기입해~!👏")
     }
@@ -144,13 +148,12 @@ function idPwChecking () {
 }
 
 
-// 🟦 전체 로그인 프로세스, '로그인 button' 을 누르면 이게 실행
 function loginProcess() {
 
     // 로그인 한 정보를 객체로 만들기
     addArrUserLog()
 
-    // 회원가입값이랑, 로그인 기입값이랑 같은지 비교
+    // 회원가입값이랑, 로그인 기입값이랑 같은지 확인
     idPwChecking ()
 
 }
