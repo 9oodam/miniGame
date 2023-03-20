@@ -39,7 +39,7 @@ body {
 
     /* transform: translate(); */
 
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 
     /* 항상 그 자리에 고정 
         [궁금한 점] 이건 왜 필요하지? */
@@ -98,7 +98,7 @@ body {
     height: 400px;
 
 
-    background-color: rgb(221, 221, 204);
+    /* background-color: rgb(221, 221, 204); */
 
 
     position: absolute;
@@ -174,13 +174,15 @@ body {
 /* 탭 전체 스타일 */
 .backgroundImage-container .tabs {
     position: absolute;
-    
+
     width: 500px;
     height: 310px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 
     margin-top: 50px;
     padding-bottom: 40px;
@@ -212,7 +214,7 @@ body {
     border-left: 3px solid #333333;
     border-top: 3px solid #333333;
     border-right: 3px solid #333333;
-    box-shadow: 1px -3px 5px 0px ;
+    box-shadow: 1px -3px 5px 0px;
 
     /* border: 3px solid #333333; */
 
@@ -224,13 +226,13 @@ body {
 
     /* display: block; */
     float: left;
-    
+
 
     /* text-align: center; */
 
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     /* border-top-right-radius: 12px; */
     /* border-top-left-radius: 12px; */
     /* transition: all 0.2s ease; */
@@ -251,7 +253,7 @@ body {
     border-left: 3px solid #333333;
     border-top: 3px solid #333333;
     border-right: 3px solid #333333;
-    box-shadow: 1px -3px 5px 0px ;
+    box-shadow: 1px -3px 5px 0px;
 
     /* border: 3px solid #333333; */
 
@@ -267,7 +269,7 @@ body {
 
 
     text-align: center;
-    
+
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     /* transition: all 0.2s ease; */
@@ -308,7 +310,7 @@ input[name="tab_item"] {
 
     width: 40px;
     height: 40px;
-    
+
 }
 
 
@@ -323,6 +325,8 @@ input[name="tab_item"] {
 .tabs input:checked+.tab_item {
     background-color: rgb(221, 221, 204);
     color: rgba(0, 0, 0, 0.89);
+
+    
 }
 
 
@@ -340,9 +344,9 @@ input[name="tab_item"] {
      */
 
 }
-  
-  /* 탭 스타일 */
-  .tab_item {
+
+/* 탭 스타일 */
+.tab_item {
     /* width: calc(100%/3);
     height: 50px;
     
@@ -362,36 +366,37 @@ input[name="tab_item"] {
     font-weight: bold;
     transition: all 0.2s ease; */
 
-  }
-  .tab_item:hover {
+}
+
+.tab_item:hover {
     /* opacity: 0.75; */
-  }
-  
-  /* 라디오 버튼 UI삭제*/
-  /* input[name="tab_item"] { */
-    /* display: none; */
-  }
-  
-  /* 탭 컨텐츠 스타일 */
-  .tab_content {
+}
+
+/* 라디오 버튼 UI삭제*/
+/* input[name="tab_item"] { */
+/* display: none; */
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
     /* display: none;
     padding: 40px 40px 0;
     clear: both;
     overflow: hidden; */
-  }
-  
-  
-  /* 선택 된 탭 콘텐츠를 표시 */
-  /* #all:checked ~ #all_content,
+}
+
+
+/* 선택 된 탭 콘텐츠를 표시 */
+/* #all:checked ~ #all_content,
   #programming:checked ~ #programming_content,
   #design:checked ~ #design_content { */
-    /* display: block; */
-  
-  
-  /* 선택된 탭 스타일 */
-  /* .tabs input:checked + .tab_item { */
-    /* background-color: #333333; */
-    /* background-color: rgb(221, 221, 204);
+/* display: block; */
+
+
+/* 선택된 탭 스타일 */
+/* .tabs input:checked + .tab_item { */
+/* background-color: #333333; */
+/* background-color: rgb(221, 221, 204);
     color: rgb(81, 64, 47);
   } */
 
@@ -403,7 +408,7 @@ input[name="tab_item"] {
 .login-id-pw-area {
     width: 500px;
     height: 120px;
-    
+
     /* background-color: indigo; */
 
     display: flex;
@@ -415,8 +420,8 @@ input[name="tab_item"] {
 }
 
 
-.login-left-area  {
-    
+.login-left-area {
+
     width: 350px;
     height: 110px;
     /* background-color: greenyellow; */
@@ -460,7 +465,7 @@ input[name="tab_item"] {
     align-items: center;
 }
 
-.login-button{
+.login-button {
     background-color: rgb(204, 163, 129);
 
     width: 95px;
@@ -472,9 +477,12 @@ input[name="tab_item"] {
     justify-content: center;
     align-items: center;
 
+    cursor: pointer;
+
 }
 
 .login-button-font {
+    cursor: pointer;
     font-size: 18px;
     /* font-weight: 700; */
     color: whitesmoke;
@@ -506,7 +514,7 @@ input[name="tab_item"] {
     height: 30px;
 
     /* background-color: green; */
-    
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -522,7 +530,7 @@ input[name="tab_item"] {
     height: 30px;
 
     /* background-color: blue; */
-    
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -535,11 +543,14 @@ input[name="tab_item"] {
 
 
 .findPw_area {
+
+    /* cursor: pointer; */
+
     width: 120px;
     height: 30px;
 
     /* background-color: yellow; */
-    
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -553,6 +564,7 @@ input[name="tab_item"] {
 
 
 .join-homepage-exit {
+    cursor: pointer;
 
     width: 580px;
     height: 90px;
@@ -576,20 +588,24 @@ input[name="tab_item"] {
     justify-content: center;
     align-items: center;
 
+    cursor: pointer;
+
 }
 
 .join-button-font {
+    cursor: pointer;
+
     position: absolute;
     left: 60px;
     font-size: 20px;
-    font-weight: 700; 
-    color: whitesmoke; 
+    font-weight: 700;
+    color: whitesmoke;
 
     -webkit-text-stroke: 1px rgb(81, 64, 47);
 
 }
 
-.exit-button{
+.exit-button {
     background-color: rgb(204, 163, 129);
     border-radius: 8px;
 
@@ -600,6 +616,7 @@ input[name="tab_item"] {
     justify-content: center;
     align-items: center;
 
+    cursor: pointer;
 }
 
 
@@ -609,15 +626,18 @@ input[name="tab_item"] {
     font-size: 20px;
     font-weight: 700;
     color: whitesmoke;
-    
+
     position: absolute;
     left: 375px;
 
+    cursor: pointer;
 }
 
 
 
 .homepage-button {
+    cursor: pointer;
+
     background-color: rgb(204, 163, 129);
     border-radius: 8px;
 
@@ -632,6 +652,8 @@ input[name="tab_item"] {
 
 
 .homepage-button-font {
+    cursor: pointer;
+
     font-size: 20px;
     font-weight: 700;
     color: whitesmoke;
@@ -641,3 +663,375 @@ input[name="tab_item"] {
     -webkit-text-stroke: 1px rgb(81, 64, 47);
 
 }
+
+
+/* ------------ 자바스크립트랑 팝업 연결 작업 ---------------- */
+
+
+.popup-user-join-area{
+
+    /* position: fixed; */
+    /* top: -50%; */
+    /* left: -50%; */
+    /* transform: translate(-50%, -50%); */
+
+    /* 처음엔 안 보이게 해두었다가, 클릭하면, 보이게 하기  */
+    display: none;
+    /* position: absolute; */
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+
+/* 함수가 보이게 될 때, 실행되는 CSS 
+    ⭐⭐⭐ 같이 있을 때 실행, 이므로, 같이 붙여 써야 함. */
+.popup-user-join-area.is-active {
+    display: block;
+    /* z-index: 1; */
+
+    /* display: flex;
+        align-items: center;
+        justify-content: center; */
+    /* position: absolute; */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+
+    /* 가운데로 오게 하는 새로운 방법!
+                ⭐ 팝업 만들기 할 때, 반드시 쓰게 됨! ⭐⭐⭐ */
+
+    /* position: relative; */
+
+
+}
+
+
+
+
+
+.popup-user-join-area .create-userid-area {
+
+    width: 350px;
+    height: 550px;
+    border-radius: 12px;
+
+    background-color: rgb(255, 255, 224);
+
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* x 자 표시 ✅ '영역' 잡기 */
+.popup-user-join-area .create-userid-area span {
+
+    /* background-color: red; */
+
+    width: 30px;
+    height: 30px;
+
+    display: block;
+    
+    position: absolute;
+    right: 0;
+
+    cursor: pointer;
+
+}
+
+
+.popup-user-join-area .create-userid-area span::after, 
+.popup-user-join-area .create-userid-area span::before {
+
+    content: '';
+    width: 15px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.904);
+
+    border-radius: 2px;
+
+    display: block;
+
+
+    position: absolute;
+    top: 12px;
+    left: 8px;
+
+    transform: rotate(45deg);
+}
+
+/* 중복되는 것 빼고, 방향만 바꾸기, 다른 - 자 */
+.popup-user-join-area .create-userid-area span::after {
+    transform: rotate(-45deg);
+}
+
+
+
+.popup-user-join-area .create-userid-area .userid-title-container {
+
+    width: 300px;
+    height: 30px;
+    /* background-color: thistle; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-user-join-area .create-userid-area .userid-photo-container {
+    width: 300px;
+    height: 120px;
+    /* background-color: peachpuff; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.popup-user-join-area .create-userid-area .userid-photo-container .userid-photo-content {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: gray;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.popup-user-join-area .create-userid-area .userid-create-container {
+    width: 300px;
+    height: 40px;
+    /* background-color: indianred; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-user-join-area .create-userid-area .userid-create-container .userid-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+
+
+.popup-user-join-area .create-userid-area .userpw-create-container {
+
+    width: 300px;
+    height: 40px;
+
+    /* background-color: powderblue; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.popup-user-join-area .create-userid-area .userpw-create-container .userpw-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+
+
+.popup-user-join-area .create-userid-area .userpw-2nd-create-container {
+    width: 300px;
+    height: 40px;
+
+    background-color: seashell;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.popup-user-join-area .create-userid-area .userpw-create-container .user-pw1-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+.popup-user-join-area .create-userid-area .userpw-2nd-create-container .user-pw2-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+.popup-user-join-area .create-userid-area .username-create-container {
+
+    width: 300px;
+    height: 70px;
+
+    /* background-color: silver; */
+
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.popup-user-join-area .create-userid-area .username-create-container .user-name-text {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.popup-user-join-area .create-userid-area .username-create-container .user-name {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+
+.popup-user-join-area .create-userid-area .user-malefemale-container {
+
+    width: 300px;
+    height: 70px;
+
+    /* background-color: maroon; */
+
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    
+}
+
+
+
+.user-name-text-container {
+    /* background-color: tomato; */
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name-text {
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.popup-user-join-area .user-malefemale-container .user-male-container {
+
+    width: 300px;
+    height: 20px;
+    /* background-color: gainsboro; */
+
+    display: flex;
+    align-items: center;
+}
+
+
+.popup-user-join-area .user-malefemale-container .user-female-container {
+
+    width: 300px;
+    height: 25px;
+    /* background-color: gainsboro; */
+
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+.popup-user-join-area .create-userid-area .birthday-create-container {
+
+    width: 300px;
+    height: 60px;
+
+
+    /* background-color:blue; */
+
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    
+}
+
+
+.popup-user-join-area .create-userid-area .birthday-create-container .birday-text {
+
+    width: 300px;
+    height: 20px;
+
+    /* background-color: yellowgreen; */
+    display: flex;
+    align-items: center;
+}
+
+
+.popup-user-join-area .create-userid-area .birthday-create-container .birday-choice {
+
+    width: 300px;
+    height: 30px;
+
+    /* background-color: cyan; */
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.popup-user-join-area .create-userid-area .fin-join-container .fin-join-button {
+
+    width: 300px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.87);  
+    border-radius: 10px;
+
+    color: rgba(255, 255, 255, 0.904);
+}
+
+
+
+
+
