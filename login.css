@@ -1,7 +1,13 @@
-/* -----------------------기본 설정 START -------------------------- */
+@font-face {
+    font-family: "mapleLogin";
+    src: url(./font/Maplestory\ Bold.ttf) format(truetype);
+}
+
 
 /* 🟦 남아있는 여백 지우고 시작하기 */
 body {
+
+    font-family: "mapleLogin";
 
     /* 남아있는 여백이 있어서 -> 확인하고 지워줌 */
     margin: 0;
@@ -15,48 +21,7 @@ body {
 
 }
 
-
-
-/* 🟦 img태그에 사진 넣을때, 원본 비율 유지하면서, container 안에 있게 하기 */
-img {
-
-    /* 사진 비율 조정은 container 에서 하기 (실익 비교는 하면서 진행) 🟧  */
-    /* width: 100%; */
-    /* height: 100%; */
-
-    /* 원본 사진이 crop 되어서 나오는 느낌 (이걸 해야, 안 찌그러짐) */
-    /* object-fit: cover; */
-
-}
-
-
-/* 🟦 p 태그에 텍스트 쓸 때, container 넘어가면, 점점점, 1줄로 써지게 하기 
-    ✅ width, height 없이도 가능
-    ✅ 이걸, p태그를 감싸는 container 에게 하면 error 
-    ✅ 이걸 p태그에 걸어줘야 함. 
-                               */
-p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: inline-block;
-}
-
-
-/* 🟦 가운데 오게 하기
-    ✅ text 를 가운데로 오게 하려면, p 태그를 감싸는 container 에게, 해당 클래스를 붙인다. 
-    ✅ img 를 가운데 오게 하려면, img 태그를 감싸는 container 에게!
-    ✅ 하위 div 를 가운데 오게 하려면, div 를 감싸는 wrap 에게! */
-.align_center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-
-
-
-/* -----------------------기본 설정 END -------------------------- */
-
+/* ------------------------------ 기본셋팅 END --------------------------- */
 
 
 /* 로그인 창 전체 영역 */
@@ -69,79 +34,385 @@ p {
     width: 100vw;
     height: 100vh;
     /* 왼쪽에서 떨어지는 수치, 위에서 떨어지는 수치는 변경 가능 ✅✅✅✅✅  */
-    left: 50%;
-    top: 50%;
+    /* left: 50%; */
+    /* top: 50%; */
+
     /* transform: translate(); */
 
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 
     /* 항상 그 자리에 고정 
         [궁금한 점] 이건 왜 필요하지? */
     /* position: fixed; */
 
+
 }
+
+
+
+.backgroundImage-container {
+
+    position: relative;
+}
+
+
+
 
 .login-background-image-area .backgroundImage-container {
-    
-    width: 70vw;
-    height:100vh;
-    top: 0;
-    left: 0;
-    transform: translate(20%, 10%);
-    
+
+    width: 100vw;
+    height: 100vh;
+    /* top: 0; */
+    /* left: 0; */
+
+    /* background-size: cover; */
+    position: relative;
+
 }
-
-
-
 
 
 
 .login-background-image-area .backgroundImage-content {
-    
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+
+    width: 100vw;
+    height: 100vh;
+
+    /* object-fit: contain; */
+    object-fit: cover;
+    /* transform: translate(-10%, -10%); */
+
+
+    position: absolute;
+    /* left: 380px; */
+
+    /* top: 150px; */
+
+    /* transform: scale(1.1); */
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area {
+
+    width: 600px;
+    height: 400px;
+
+
+    /* background-color: rgb(221, 221, 204); */
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 12px;
+    border: 0.8px solid rgba(0, 0, 0, 0.897);
 
 }
 
 
-.login-background-image-area .login-whole-area {
-    
-    height: 380px;
-    width: 570px;
-    border-radius: 12px;
+.backgroundImage-container .login-maple-concept-area .login-mapletab-area {
 
-    background-color: yellowgreen;
+    width: 600px;
+    height: 60px;
 
-    /* 이게 하나의 set 로 움직임. 
-        translate를 0,0 으로 하면, 왼쪽 상단, 을 기준으로 잡혀짐 
-        그래서 translate 를 -50%, -50% 로 줘서 가운데로 오게 해야 함 */
-    position: fixed;
-    left: 50%;
+    background-color: teal;
+}
+
+
+.backgroundImage-container .login-maple-concept-area .login-mapletab-area .mapletab-leaf-title .mapletab-leaf {
+
+    width: 40px;
+    height: 40px;
+
+    transform: rotate(80deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area .login-id-pw-login-area {
+
+    width: 600px;
+    height: 130px;
+
+    background-color: indianred;
+
+}
+
+.backgroundImage-container .login-maple-concept-area .login-idsave-pwsearch-findpw-area {
+
+    width: 600px;
+    height: 55px;
+
+    background-color: silver;
+
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area .login-idcreate-homepage-exit-area {
+
+    width: 600px;
+    height: 80px;
+
+    background-color: hotpink;
+
+}
+
+
+
+
+/* 탭 디자인 */
+
+/* 탭 전체 스타일 */
+.backgroundImage-container .tabs {
+    position: absolute;
+
+    width: 500px;
+    height: 310px;
     top: 50%;
-    transform: translate(0,-30%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: rgb(221, 221, 204);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: row;
+}
+
+/* 탭 스타일 */
+.tabs .tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    /* border-bottom: 3px solid #333333; */
+    /* background-color: #f8f8f8; */
+    /* line-height: 50px; */
+    /* font-size: 26px; */
+    /* text-align: center; */
+    /* color: #333333; */
 
 
+    border-bottom: 1px solid gray;
+    border-left: 3px solid #333333;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    box-shadow: 1px -3px 5px 0px;
+
+    /* border: 3px solid #333333; */
+
+    color: #333333;
+    background-color: rgb(81, 64, 47);
+    color: rgb(221, 221, 204);
+
+
+
+    /* display: block; */
+    float: left;
+
+
+    /* text-align: center; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top-right-radius: 12px; */
+    /* border-top-left-radius: 12px; */
+    /* transition: all 0.2s ease; */
+}
+
+.tabs .tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    /* border-bottom: 3px solid #333333; */
+    /* background-color: #f8f8f8; */
+    /* line-height: 50px; */
+    /* font-size: 26px; */
+    /* text-align: center; */
+    /* color: #333333; */
+
+
+    border-bottom: 1px solid gray;
+    border-left: 3px solid #333333;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    box-shadow: 1px -3px 5px 0px;
+
+    /* border: 3px solid #333333; */
+
+    color: #333333;
+    background-color: rgb(81, 64, 47);
+    color: rgb(221, 221, 204);
+
+
+
+    display: block;
+    float: left;
+    display: flex;
+
+
+    text-align: center;
+
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    /* transition: all 0.2s ease; */
+}
+
+.tab_item:hover {
+    opacity: 0.75;
+}
+
+/* 라디오 버튼 UI삭제*/
+input[name="tab_item"] {
+    display: none;
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+    /* display: none; */
+    /* padding: 40px 40px 0; */
+    clear: both;
+    overflow: hidden;
+
+    /* position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    align-content: center;
+    align-content: center; */
+}
 
+
+.maple_leaf_red {
+
+    width: 40px;
+    height: 40px;
+}
+
+.nexon-logo {
+
+    width: 40px;
+    height: 40px;
 
 }
 
 
-/* 너비는 아직 미정, 눈대중✅  */
-.login-background-image-area .login-whole-area .login-id-pw-area {
+/* 선택 된 탭 콘텐츠를 표시 */
+#all:checked~#all_content,
+#programming:checked~#programming_content,
+#design:checked~#design_content {
+    display: block;
+}
 
-    width: 550px;
-    height: 170px;
+/* 선택된 탭 스타일 */
+.tabs input:checked+.tab_item {
+    background-color: rgb(221, 221, 204);
+    color: rgba(0, 0, 0, 0.89);
+
     
-    background-color: indigo;
+}
+
+
+
+
+
+/* 탭 전체 스타일 */
+.tabs {
+    /* margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin: 0 auto;
+     */
+
+}
+
+/* 탭 스타일 */
+.tab_item {
+    /* width: calc(100%/3);
+    height: 50px;
+    
+    border-bottom: 3px solid #333333;
+    background-color: rgb(81, 64, 47);
+    color: #333333;
+
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    
+    
+    display: block;
+    float: left;
+    
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease; */
+
+}
+
+.tab_item:hover {
+    /* opacity: 0.75; */
+}
+
+/* 라디오 버튼 UI삭제*/
+/* input[name="tab_item"] { */
+/* display: none; */
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+    /* display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    overflow: hidden; */
+}
+
+
+/* 선택 된 탭 콘텐츠를 표시 */
+/* #all:checked ~ #all_content,
+  #programming:checked ~ #programming_content,
+  #design:checked ~ #design_content { */
+/* display: block; */
+
+
+/* 선택된 탭 스타일 */
+/* .tabs input:checked + .tab_item { */
+/* background-color: #333333; */
+/* background-color: rgb(221, 221, 204);
+    color: rgb(81, 64, 47);
+  } */
+
+
+/* ; */
+/* ------------- 하위 요소 디자인  ----------------- */
+
+
+.login-id-pw-area {
+    width: 500px;
+    height: 120px;
+
+    /* background-color: indigo; */
 
     display: flex;
-    align-content: space-around;
+    align-content: center;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
@@ -149,11 +420,11 @@ p {
 }
 
 
-.login-background-image-area .login-whole-area .login-id-pw-area .login-left-area  {
-    
-    width: 400px;
-    height: 150px;
-    background-color: greenyellow;
+.login-left-area {
+
+    width: 350px;
+    height: 110px;
+    /* background-color: greenyellow; */
 
     display: flex;
     justify-content: center;
@@ -164,120 +435,71 @@ p {
 }
 
 
-.login-background-image-area .login-whole-area .login-id-pw-area .wrap-id-input-label {
+.id-input-deco {
+    width: 370px;
+    height: 45px;
 
-    width: 390px;
-    height: 70px;
-
-    background-color:  green;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    background-color: rgb(204, 183, 153);
+    color: rgb(48, 29, 9);
 }
 
-.login-background-image-area .login-whole-area .login-id-pw-area .wrap-id-input-label .id-label-deco {
+.pw-input-deco {
+    margin-top: 5px;
 
-    width: 100px;
-    height: 30px;
-    background-color: lightsalmon;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 370px;
+    height: 45px;
+    background-color: rgb(204, 183, 153);
+    color: rgb(48, 29, 10);
 }
 
 
-.login-background-image-area .login-whole-area .login-id-pw-area .wrap-id-input-label .id-input-deco {
-    width: 200px;
-    height: 30px;
-
-    background-color: brown;
-}
-
-
-.login-background-image-area .login-whole-area .login-id-pw-area .wrap-pw-input-label {
-    width: 390px;
-    height: 70px;
-    
-    background-color: peru;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-
-}
-
-
-.login-background-image-area .login-whole-area .login-id-pw-area .wrap-pw-input-label .pw-label-deco {
-
-    width: 100px;
-    height: 30px;
-    background-color: powderblue;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.login-background-image-area .login-whole-area .login-id-pw-area .wrap-pw-input-label .pw-input-deco {
-
-    width: 200px;
-    height: 30px;
-    background-color: indianred;
-}
-
-
-.login-background-image-area .login-whole-area .login-id-pw-area .login-right-area {
+.login-right-area {
 
     width: 120px;
     height: 120px;
 
-    background-color: bisque;
+    /* background-color: bisque; */
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-background-image-area .login-whole-area .login-id-pw-area .wrap-login-button {
-    width: 110px;
-    height: 110px;
-    
-    background-color: lightcoral;
+.login-button {
+    background-color: rgb(204, 163, 129);
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 8px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.login-background-image-area .login-whole-area .login-id-pw-area .wrap-login-button .login-button{
-    background-color: teal;
-
-    width: 100px;
-    height: 60px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
 
 }
 
 .login-button-font {
-    font-size: 20px;
-    font-weight: 700;
+    cursor: pointer;
+    font-size: 18px;
+    /* font-weight: 700; */
     color: whitesmoke;
+    /* text-shadow:-3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000; */
+    -webkit-text-stroke: 2px rgb(81, 64, 47);
+
+    position: absolute;
+
 }
 
 
+.idSave-findIdPw {
 
-.login-background-image-area .login-whole-area .idSave-findIdPw {
+    width: 500px;
+    height: 38px;
 
-    width: 550px;
-    height: 60px;
-
-    background-color: floralwhite;
+    /* background-color: yellowgreen; */
 
     display: flex;
     justify-content: space-evenly;
@@ -287,114 +509,77 @@ p {
 }
 
 
-.login-background-image-area .login-whole-area .idSave-findIdPw .idSave_area {
-    width: 150px;
+.idSave_area {
+    width: 100px;
     height: 30px;
 
-    background-color: green;
-    
+    /* background-color: green; */
+
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     position: absolute;
-    left: 70px;
+    left: 15px;
+
+}
+
+
+.findId_area {
+    width: 100px;
+    height: 30px;
+
+    /* background-color: blue; */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    left: 190px;
 
 }
 
 
 
+.findPw_area {
 
-.login-background-image-area .login-whole-area .idSave-findIdPw .findId_area {
+    /* cursor: pointer; */
+
     width: 120px;
     height: 30px;
 
-    background-color: blue;
-    
+    /* background-color: yellow; */
+
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     position: absolute;
-    left: 300px;
-
-}
-
-
-.login-background-image-area .login-whole-area .idSave-findIdPw .findPw_area {
-    width: 120px;
-    height: 30px;
-
-    background-color: yellow;
-    
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    position: absolute;
-    left: 430px;
+    left: 350px;
 
 
 }
 
 
 
+.join-homepage-exit {
+    cursor: pointer;
 
-.login-background-image-area .login-whole-area .empty-area-1 {
-    width: 550px;
-    height: 10px;
+    width: 580px;
+    height: 90px;
 
-    background-color: gray;
-
-
-}
-
-.login-background-image-area .login-whole-area .empty-area-2 {
-    width: 550px;
-    height: 20px;
-
-    background-color: gray;
-
-
-}
-
-
-.login-background-image-area .login-whole-area .join-homepage-exit {
-
-    width: 550px;
-    height: 100px;
-
-    background-color: hotpink;  
+    /* background-color: hotpink;   */
 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-    background-image : url(./나무판.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-
 }
 
-
-
-
-.login-background-image-area .login-whole-area .join-homepage-exit .wrap-join-button {
-
-    width: 120px;
-    height: 80px;
-
-    background-color: bisque;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.login-background-image-area .login-whole-area .join-homepage-exit .wrap-join-button .join-button {
-    background-color: teal;
+.join-button {
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
 
     width: 100px;
     height: 60px;
@@ -402,32 +587,27 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 
 }
 
 .join-button-font {
+    cursor: pointer;
+
+    position: absolute;
+    left: 60px;
     font-size: 20px;
     font-weight: 700;
     color: whitesmoke;
+
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
 }
 
-
-
-.login-background-image-area .login-whole-area .join-homepage-exit .wrap-homepage-button {
-
-    width: 120px;
-    height: 80px;
-
-    background-color: bisque;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.login-background-image-area .login-whole-area .join-homepage-exit .wrap-homepage-button .homepage-button {
-    background-color: teal;
+.exit-button {
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
 
     width: 100px;
     height: 60px;
@@ -436,51 +616,58 @@ p {
     justify-content: center;
     align-items: center;
 
+    cursor: pointer;
 }
 
-.homepage-button-font {
-    font-size: 20px;
-    font-weight: 700;
-    color: whitesmoke;
-}
-
-
-.login-background-image-area .login-whole-area .join-homepage-exit .wrap-exit-button {
-
-    width: 120px;
-    height: 80px;
-
-    background-color: bisque;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.login-background-image-area .login-whole-area .join-homepage-exit .wrap-exit-button .exit-button{
-    background-color: teal;
-
-    width: 100px;
-    height: 60px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
 
 .exit-button-font {
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
     font-size: 20px;
     font-weight: 700;
     color: whitesmoke;
+
+    position: absolute;
+    left: 375px;
+
+    cursor: pointer;
 }
 
-/* -------- END 회원가입 화면 설정 ----------------------- */
 
 
+.homepage-button {
+    cursor: pointer;
 
-/* ------------START 팝업창으로 뜨는 회원가입 ------------------- */
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
+
+    width: 100px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.homepage-button-font {
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+    position: absolute;
+    left: 215px;
+
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
+}
+
+
+/* ------------ 자바스크립트랑 팝업 연결 작업 ---------------- */
+
+
 .popup-user-join-area{
 
     /* position: fixed; */
@@ -490,6 +677,7 @@ p {
 
     /* 처음엔 안 보이게 해두었다가, 클릭하면, 보이게 하기  */
     display: none;
+    /* position: absolute; */
 
     /* display: flex;
     justify-content: center;
@@ -505,12 +693,13 @@ p {
     /* z-index: 1; */
 
     /* display: flex;
-    align-items: center;
-    justify-content: center; */
+        align-items: center;
+        justify-content: center; */
+    /* position: absolute; */
     position: fixed;
     top: 0;
     left: 0;
-    
+
     width: 100vw;
     height: 100vh;
 
@@ -518,7 +707,7 @@ p {
     border-radius: 12px;
 
     /* 가운데로 오게 하는 새로운 방법!
-            ⭐ 팝업 만들기 할 때, 반드시 쓰게 됨! ⭐⭐⭐ */
+                ⭐ 팝업 만들기 할 때, 반드시 쓰게 됨! ⭐⭐⭐ */
 
     /* position: relative; */
 
@@ -528,13 +717,14 @@ p {
 
 
 
+
 .popup-user-join-area .create-userid-area {
 
-    width: 500px;
-    height: 600px;
+    width: 350px;
+    height: 550px;
     border-radius: 12px;
 
-    background-color: lightyellow;
+    background-color: rgb(255, 255, 224);
 
     position: fixed;
     top: 50%;
@@ -551,10 +741,12 @@ p {
 
 
 
+
+
 /* x 자 표시 ✅ '영역' 잡기 */
 .popup-user-join-area .create-userid-area span {
 
-    background-color: red;
+    /* background-color: red; */
 
     width: 30px;
     height: 30px;
@@ -575,7 +767,7 @@ p {
     content: '';
     width: 15px;
     height: 4px;
-    background-color: blue;
+    background-color: rgba(0, 0, 0, 0.904);
 
     border-radius: 2px;
 
@@ -599,8 +791,8 @@ p {
 .popup-user-join-area .create-userid-area .userid-title-container {
 
     width: 300px;
-    height: 50px;
-    background-color: thistle;
+    height: 30px;
+    /* background-color: thistle; */
 
     display: flex;
     justify-content: center;
@@ -610,7 +802,7 @@ p {
 .popup-user-join-area .create-userid-area .userid-photo-container {
     width: 300px;
     height: 120px;
-    background-color: peachpuff;
+    /* background-color: peachpuff; */
 
     display: flex;
     justify-content: center;
@@ -635,7 +827,7 @@ p {
 .popup-user-join-area .create-userid-area .userid-create-container {
     width: 300px;
     height: 40px;
-    background-color: indianred;
+    /* background-color: indianred; */
 
     display: flex;
     justify-content: center;
@@ -657,7 +849,7 @@ p {
     width: 300px;
     height: 40px;
 
-    background-color: powderblue;
+    /* background-color: powderblue; */
 
     display: flex;
     justify-content: center;
@@ -707,9 +899,9 @@ p {
 .popup-user-join-area .create-userid-area .username-create-container {
 
     width: 300px;
-    height: 90px;
+    height: 70px;
 
-    background-color: silver;
+    /* background-color: silver; */
 
     display: flex;
     justify-content: flex-start;
@@ -734,9 +926,9 @@ p {
 .popup-user-join-area .create-userid-area .user-malefemale-container {
 
     width: 300px;
-    height: 90px;
+    height: 70px;
 
-    background-color: maroon;
+    /* background-color: maroon; */
 
     display: flex;
     justify-content: flex-start;
@@ -748,7 +940,7 @@ p {
 
 
 .user-name-text-container {
-    background-color: tomato;
+    /* background-color: tomato; */
     height: 20px;
 
     display: flex;
@@ -766,8 +958,8 @@ p {
 .popup-user-join-area .user-malefemale-container .user-male-container {
 
     width: 300px;
-    height: 25px;
-    background-color: gainsboro;
+    height: 20px;
+    /* background-color: gainsboro; */
 
     display: flex;
     align-items: center;
@@ -778,7 +970,7 @@ p {
 
     width: 300px;
     height: 25px;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
 
     display: flex;
     align-items: center;
@@ -794,7 +986,8 @@ p {
     width: 300px;
     height: 60px;
 
-    background-color:blue;
+
+    /* background-color:blue; */
 
     display: flex;
     justify-content: flex-start;
@@ -809,7 +1002,7 @@ p {
     width: 300px;
     height: 20px;
 
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     display: flex;
     align-items: center;
 }
@@ -820,7 +1013,7 @@ p {
     width: 300px;
     height: 30px;
 
-    background-color: cyan;
+    /* background-color: cyan; */
     display: flex;
     align-items: center;
 }

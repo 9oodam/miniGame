@@ -47,7 +47,7 @@ function create(_id, _pw1st, _pw2nd, _name, _male_checked,_female_checked, _birt
 }
 
 
-// 🟦 생성함수를 활용하여 회원가입 데이터를 객체 > 배열로 변환하기
+// 입력한
 function addArr () {
 
     // 팝업 부분 가져오기 
@@ -82,7 +82,7 @@ function addArr () {
 }
 
 
-// 🟦 회원가입 버튼 누르면 > 전송되게 하기 
+// 회원가입 버튼 누르면 > 전송되게 하기 
 function submitInfo () {
     
     addArr();
@@ -100,7 +100,7 @@ function submitInfo () {
 
 
 
-// 🟦 로그인 기입정보 > 객체로 만들기 
+// 로그인 기입정보 > 객체로 만들기 
 // let objArrLogin = [] ✅ 전역 변수 탭으로 이동
 
 function createUserLog (_id, _pw) {
@@ -128,7 +128,6 @@ function addArrUserLog() {
 }
 
 
-// 🟦 '로그인 기입 정보' 와 '회원가입 정보'를 비교하기 
 function idPwChecking () {
 
     // 회원가입값이랑, 로그인 값이랑, 같은지 비교
@@ -149,7 +148,6 @@ function idPwChecking () {
 }
 
 
-// 🟦 로그인 버튼 누르면 -> 1) 로그인 기입 정보를 객체화 하고 2) 회원정보랑 비교하기 
 function loginProcess() {
 
     // 로그인 한 정보를 객체로 만들기
