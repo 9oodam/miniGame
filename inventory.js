@@ -41,19 +41,31 @@ function buff() {
 }
 
 // 물약 눌렀을때
-let posionea = 1;
+let posionea = 10;
 function heal() {
-  if (posionea > 0) {
-    let pptest = document.querySelector(".item-wrap");
-    user.hp += 50;
+  if (posionea > 0 && maxuserhp > user.hp) {
     posionea--;
+    let pptest = document.querySelector(".item-posion");
+    let psea = `<span>${posionea}</span>`;
+    pptest.innerHTML = psea;
+    user.hp += 50;
     console.log(pptest);
 
     userhpbarfunc();
-  } else {
+  } else if (posionea == 0) {
     console.log("물약 소진");
+    let pptest = document.querySelector(".item-posion");
+    let psea = `<span>0</span>`;
+    pptest.innerHTML = psea;
   }
   if (user.hp >= 2000) {
     user.hp = maxuserhsp;
   }
 }
+// 로딩시 물약 개수 입력 함수
+function redposionea() {
+  let pptest = document.querySelector(".item-posion");
+  let psea = `<span>${posionea}</span>`;
+  pptest.innerHTML = psea;
+}
+window.onload(redposionea());

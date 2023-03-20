@@ -90,6 +90,10 @@
 
 .inven-wrap .inven-content .item-wrap .item-posion span {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
+  height: 20px;
+  width: 30px;
+  display: flex;
+  justify-content: flex-end;
 }
