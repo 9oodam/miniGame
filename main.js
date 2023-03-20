@@ -17,7 +17,21 @@ let wolf = {
   atk: 100,
   def: 40,
   hp: 1000,
-  meso: 30,
+  meso: 50,
+};
+let dragon = {
+  name: "dragon",
+  atk: 200,
+  def: 80,
+  hp: 1500,
+  meso: 100,
+};
+let boss = {
+  name: "boss",
+  atk: 300,
+  def: 100,
+  hp: 3000,
+  meso: 300,
 };
 
 let user = {
@@ -42,6 +56,8 @@ let maxmonsterhp;
 const max_slime_hp = slime.hp;
 const max_orange_hp = orange.hp;
 const max_wolf_hp = wolf.hp;
+const max_dragon_hp = dragon.hp;
+const max_boss_hp = boss.hp;
 
 
 // 몬스터 정보 시작
@@ -54,30 +70,60 @@ function monsterinfo(name, atk, def, hp, meso) {
   this.meso = meso;
 }
 
-function monsterspown() {
-  let mon = Math.floor(Math.random() * 3 + 1);
+function choiceOpen() {
+  let popup = document.querySelector('.choice');
+  popup.classList.remove("choice-close");
+}
+
+function choiceClose() {
+  let popup = document.querySelector('.choice');
+  console.log(popup);
+  
+  let strArr = popup.className.split(" ");
+
+  if(strArr.indexOf("choice-close") == -1) {
+      popup.classList.add("choice-close");
+  }
+}
+
+function monsterspown(mon_num) {
+  choiceOpen();
+  let mon = mon_num;
+  console.log(mon);
+
   slime.hp = max_slime_hp;
   orange.hp = max_orange_hp;
   wolf.hp = max_wolf_hp;
+  dragon.hp = max_dragon_hp;
+  boss.hp = max_boss_hp;
 
-  console.log(mon);
-  if (mon === 1) {
+  if(mon == 1) {
     monster = slime;
     monsterimg = document.querySelector(".monster").classList.add("slimeimg");
     maxmonsterhp = monster.hp;
-  } else if (mon === 2) {
+  } else if(mon == 2) {
     monster = orange;
     monsterimg = document.querySelector(".monster").classList.add("orangeimg");
     maxmonsterhp = monster.hp;
-  } else if (mon === 3) {
+  } else if(mon == 3) {
     monster = wolf;
     monsterimg = document.querySelector(".monster").classList.add("wolfimg");
     maxmonsterhp = monster.hp;
+  } else if(mon == 4) {
+    monster = dragon;
+    monsterimg = document.querySelector(".monster").classList.add("dragonimg");
+    maxmonsterhp = monster.hp;
+  } else if(mon == 5) {
+    monster = boss;
+    monsterimg = document.querySelector(".monster").classList.add("bossimg");
+    maxmonsterhp = monster.hp;
   }
+
   console.log("소환된 몬스터: " + monster);
   monstername(monster.name);
-}
 
+  // choiceClose();
+}
 
 window.onload = monsterspown();
 
@@ -252,6 +298,9 @@ function nextlevel() {
   monsterimg = document.querySelector(".monster").classList.remove("slimeimg");
   monsterimg = document.querySelector(".monster").classList.remove("orangeimg");
   monsterimg = document.querySelector(".monster").classList.remove("wolfimg");
+  monsterimg = document.querySelector(".monster").classList.remove("dragonimg");
+  monsterimg = document.querySelector(".monster").classList.remove("bossimg");
+
   monsterspown();
 }
 
@@ -321,6 +370,10 @@ function monstername(monname) {
     monlevel = "Lv.5";
   }else if(monname == "wolf") {
     monlevel = "Lv.13";
+  }else if(monname == "dragon") {
+    monlevel = "Lv.27";
+  }else if(monname == "boss") {
+    monlevel = "Lv.40";
   }
 
   let monteridboxget = document.querySelector(".monsteridbox");
