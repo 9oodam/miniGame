@@ -167,6 +167,7 @@ function atk() {
     userdam = (user.atk + useratkran) * 2 - monster.def;
     monster.hp = monster.hp - userdam;
     cri_num2(userdam);
+    monsteratkd();
     monhpbar(maxmonsterhp, monster.hp);
   } else if (user.atk <= monster.def) {
     console.log(
@@ -180,6 +181,7 @@ function atk() {
     monster.hp = monster.hp - userdam;
     console.log("몬스터 체력 : ", monster.hp);
     cri_num(userdam);
+    monsteratkd();
     monhpbar(maxmonsterhp, monster.hp);
   }
 
@@ -197,6 +199,7 @@ function atk() {
       monsterdam = (monster.atk + monatkran) * 2 - user.def;
       user.hp = user.hp - monsterdam;
       cri_num2(monsterdam);
+      useratkd();
       userhpbar(user.hp);
     } else if (monster.atk <= user.def) {
       console.log(
@@ -210,13 +213,14 @@ function atk() {
       user.hp = user.hp - monsterdam;
       console.log("유저 체력 : ", user.hp);
       cri_num(monsterdam);
+      useratkd();
       userhpbar(user.hp);
     }
 
     if (user.hp <= 0) {
       loserpop();
     }
-  }, 100);
+  }, 2000);
 
   turncnt++;
 }
@@ -238,7 +242,7 @@ function cri_num(dmg) {
     document.querySelector(".number").innerHTML = "";
     criticalNum.classList.remove("damage_number");
     criticalNum.classList.remove("vibration");
-  }, 100);
+  }, 2000);
 }
 
 function cri_num2(dmg) {
@@ -257,7 +261,7 @@ function cri_num2(dmg) {
     document.querySelector(".critical").innerHTML = "";
     criticalNum.classList.remove("damage_number_critical");
     criticalNum.classList.remove("vibration");
-  }, 100);
+  }, 2000);
 }
 
 function miss(dmg) {
@@ -275,7 +279,52 @@ function miss(dmg) {
   setTimeout(() => {
     document.querySelector(".number").innerHTML = "";
     criticalNum.classList.remove("miss_number");
-  }, 100);
+  }, 2000);
+}
+
+function heel(posion) {
+  let eat = document.querySelector(".damage");
+
+  let strArr = eat.className.split(" ");
+
+  if (strArr.indexOf("heel_number") == -1) {
+    eat.classList.add("heel_number");
+  }
+
+  document.querySelector(".number").innerHTML = "+100";
+
+  setTimeout(() => {
+    document.querySelector(".number").innerHTML = "";
+    criticalNum.classList.remove("heel_number");
+  }, 2000);
+}
+
+function useratkd() {
+  let atkd = document.querySelector(".useratkd");
+
+  let strArr = atkd.className.split(" ");
+
+  if(strArr.indexOf("atkd") == -1) {
+    atkd.classList.add("atkd");
+  }
+
+  setTimeout(() => {
+    atkd.classList.remove("atkd");
+  }, 1000);
+}
+
+function monsteratkd() {
+  let atkd = document.querySelector(".monsteratkd");
+
+  let strArr = atkd.className.split(" ");
+
+  if(strArr.indexOf("atkd") == -1) {
+    atkd.classList.add("atkd");
+  }
+
+  setTimeout(() => {
+    atkd.classList.remove("atkd");
+  }, 1000);
 }
 
 let useratkran = 0;
@@ -323,15 +372,10 @@ function winnerpop() {
 function nextlevel(id) {
   this.id = id;
   let next = document.querySelector(".win").classList.remove("winner");
-  let mgethpbox = document.querySelector("#monhpbarbox");
-  let mhpdate = `<div class="hpbar" style="width: 100%"></div>`;
-  mgethpbox.innerHTML = mhpdate;
 
-  let gethpbox = document.querySelector("#userhpbarbox");
-  let uhp = (user.hp / maxuserhp) * 100;
-  console.log(uhp);
-  let hpdate = `<div class="hpbar" style="width: ${uhp}%"></div>`;
-  gethpbox.innerHTML = hpdate;
+  monhpbarfunc();
+
+  userhpbarfunc();
 
   turncnt = 0;
 
@@ -446,4 +490,18 @@ function monsterreset() {
   monsterimg = document.querySelector(".monster").classList.remove("wolfimg");
   monsterimg = document.querySelector(".monster").classList.remove("dragonimg");
   monsterimg = document.querySelector(".monster").classList.remove("bossimg");
+}
+
+function userhpbarfunc() {
+  let gethpbox = document.querySelector("#userhpbarbox");
+  let uhp = (user.hp / maxuserhp) * 100;
+  console.log(uhp);
+  let hpdate = `<div class="hpbar" style="width: ${uhp}%"></div>`;
+  gethpbox.innerHTML = hpdate;
+}
+
+function monhpbarfunc() {
+  let mgethpbox = document.querySelector("#monhpbarbox");
+  let mhpdate = `<div class="hpbar" style="width: 100%"></div>`;
+  mgethpbox.innerHTML = mhpdate;
 }

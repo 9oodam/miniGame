@@ -18,13 +18,13 @@
           <div class="top-lt">
             <!-- 무기이미지 -->
             <div class="weapon-wrap">
-              <div class="weapon"></div>
-              <span>ATK +10</span>
+              <!-- <div class="weapon"></div>
+              <span>ATK +10</span> -->
             </div>
             <!-- 방어이미지 -->
             <div class="ammor-wrap">
-              <div class="ammor"></div>
-              <span>DEF +10</span>
+              <!-- <div class="ammor"></div>
+              <span>DEF +10</span> -->
             </div>
           </div>
 
@@ -67,18 +67,25 @@
         </div>
 
         <!-- 유저 이미지 -->
-        <div class="user"></div>
+        <div class="user">
+          <div class="useratkd"></div>
+        </div>
         <!-- 대미지 -->
         <div class="damage">
           <div class="critical"></div>
           <div class="number"></div>
         </div>
         <!-- 몬스터 이미지 -->
-        <div class="monster"></div>
+        <div class="monster">
+          <div class="monsteratkd"></div>
+        </div>
       </div>
 
       <!-- hp랑 공격 버튼 -->
       <div class="bottom">
+        <div class="sound-wrap">
+          <audio src="./audio/Rest_n_Peace.mp3" controls autoplay loop></audio>
+        </div>
         <!-- 유저 hp -->
         <div class="userhp">
           <div class="useridbox">
@@ -124,10 +131,11 @@
 
         <!-- 오른쪽 영역 -->
         <div class="right_area">
-          <button class="bot" onclick="openstore()">
-            상점나가기
-          </button>
-          <button class="bot" onclick="location.href='https://maplestory.nexon.com/News/Event/Ongoing/724'">
+          <button class="bot" onclick="openstore()">상점나가기</button>
+          <button
+            class="bot"
+            onclick="location.href='https://maplestory.nexon.com/News/Event/Ongoing/724'"
+          >
             EVENT 바로가기
           </button>
         </div>
@@ -146,7 +154,19 @@
       </div>
 
       <div class="box">
-        <div style="width:100%; height: 50px; background-color: white; color: gray; font-size: 20px; text-align: center; padding-top: 7px;">전체</div>
+        <div
+          style="
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            color: gray;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 7px;
+          "
+        >
+          전체
+        </div>
         <div class="flex-item">
           <div class="imgsize2 img3"></div>
           <div class="item-align">
@@ -178,8 +198,9 @@
         </div>
 
         <div class="flex-container01 tab-container">
+          <!--  -->
           <div class="flex-item">
-            <div class="imgsize2 img4"></div>
+            <div id="sword" class="imgsize2 img4" onclick="buyItem(this.id)"></div>
 
             <div class="item-align">
               <div class="item-name">짱 쎈 검</div>
@@ -191,7 +212,7 @@
           </div>
 
           <div class="flex-item">
-            <div class="imgsize2 img5"></div>
+            <div id="shield" class="imgsize2 img5" onclick="buyItem(this.id)"></div>
             <div class="item-align">
               <div class="item-name">냄비뚜껑 방패</div>
               <div class="price">
@@ -215,7 +236,7 @@
 
         <div class="flex-container02 tab-container">
           <div class="flex-item">
-            <div class="imgsize2 img7"></div>
+            <div id="red" class="imgsize2 img7" onclick="buyItem(this.id)"></div>
             <div class="item-align">
               <div class="item-name">빨간 포션</div>
               <div class="price">
@@ -246,7 +267,7 @@
               </div>
             </div>
           </div>
-
+        </div>
       </div>
     </div>
 
@@ -254,16 +275,10 @@
     <div class="inven-wrap">
       <div class="inven-content">
         <span onclick="openInven()"></span>
-        <div class="item-wrap">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
+        <div class="item-wrap" id="inventory">
+          <div class="item-posion" onclick="heal()">
+            <span>1</span>
+          </div>
         </div>
       </div>
     </div>
