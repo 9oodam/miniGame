@@ -13,6 +13,18 @@
 <body>
 
 
+    <!-- <audio src="maple_story_BGM.mp3" autoplay loop controls id="myAudio">오디오 지원되지 않는 브라우저</audio> -->
+<!-- 
+    <iframe src="./maple_story_BGM.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+
+    <audio id="audio" autoplay>
+
+    <source src="./maple_story_BGM.mp3">
+
+    </audio> -->
+
+
+
     <!-- 전체 화면 -->
     <div class="login-background-image-area ">
 
@@ -20,7 +32,7 @@
         <div class="backgroundImage-container">
 
             <!-- [배경 이미지]  -->
-            <img class="backgroundImage-content" src="./img/maple_background_image_2x.png" alt="">
+            <img onclick="bgm_play()" class="backgroundImage-content" src="./img/maple_background_image_2x.png" alt="">
 
 
             <!-- [로그인 창] -->

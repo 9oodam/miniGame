@@ -7,25 +7,31 @@ let objArrLogin = []
 
 
 // 🟦 배경음악 넣기 
-    let audio = new Audio("maple_story_BGM.mp3");
 
+function bgm_play() {
+
+    let audio = new Audio("maple_story_BGM.mp3");
+    
     // load 하기 
     audio.load()
 
     // 볼륨 설정 
-    audio.volume = 1 ;
-
+    audio.volume = 0.3;
+    
     // 실행
-    // audio.loop = true;
+    audio.loop = true;
+    audio.autoplay = true;
     
-    
-    // 페이지 로드 되면, play 하기
-    window.onload = function() {
-        // audio.autoplay = true;
-        audio.play();
-        alert("window.onload : 브라우저가 HTML 렌더링 다 했데~👏")
-    }
+    // window.onload = audio.play();
+}
 
+
+    // 페이지 로드 되면, play 하기
+    // window.onload = function() {
+    //     audio.play();
+    //     alert("window.onload : 브라우저가 HTML 렌더링 다 했데~👏")
+    // }
+    
 
 
 // 📘 [조각기능] 회원가입 버튼 누르면 > 팝업 뜨게 하기 
@@ -177,7 +183,8 @@ function loginProcess() {
 
     // 회원가입값이랑, 로그인 기입값이랑 같은지 확인
     idPwChecking ()
-
+ 
+    location.replace('./main.html');
 }
 
 
