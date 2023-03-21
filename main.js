@@ -39,7 +39,7 @@ let user = {
   atk: 100,
   def: 10,
   hp: 2000,
-  meso: 0,
+  meso: 500,
   level: 1,
 };
 
@@ -229,7 +229,7 @@ function atk() {
     if (user.hp <= 0) {
       loserpop();
     }
-  }, 2000);
+  }, 1000);
 
   turncnt++;
 }
@@ -251,7 +251,7 @@ function cri_num(dmg) {
     document.querySelector(".number").innerHTML = "";
     criticalNum.classList.remove("damage_number");
     criticalNum.classList.remove("vibration");
-  }, 2000);
+  }, 1000);
 }
 
 function cri_num2(dmg) {
@@ -270,7 +270,7 @@ function cri_num2(dmg) {
     document.querySelector(".critical").innerHTML = "";
     criticalNum.classList.remove("damage_number_critical");
     criticalNum.classList.remove("vibration");
-  }, 2000);
+  }, 1000);
 }
 
 function miss(dmg) {
@@ -288,7 +288,7 @@ function miss(dmg) {
   setTimeout(() => {
     document.querySelector(".number").innerHTML = "";
     criticalNum.classList.remove("miss_number");
-  }, 2000);
+  }, 1000);
 }
 
 function heel(posion) {
@@ -305,7 +305,7 @@ function heel(posion) {
   setTimeout(() => {
     document.querySelector(".number").innerHTML = "";
     criticalNum.classList.remove("heel_number");
-  }, 2000);
+  }, 1000);
 }
 
 function useratkd() {
@@ -476,7 +476,10 @@ function mesofun() {
   let mesoo = document.querySelector(".mesos");
   let mesocontent = `<div class="mesoimg"></div>\n<span>${user.meso}</span>`;
   mesoo.innerHTML = mesocontent;
+  console.log("유저 메소 : ", user.meso);
 }
+
+window.onload = mesofun();
 
 // 메소 관련 끝
 
