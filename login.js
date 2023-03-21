@@ -163,10 +163,15 @@ function idPwChecking () {
     // 비교
     if ( objArr[0]['id'] == objArrLogin[0]['id'] && objArr[0]['pw1st'] == objArrLogin[0]['pw'] ) {
         alert ("회원가입값이랑 로그인이랑 같아~!🤩")
+    location.replace('./main.html');
+
     } else {
         alert( "다시 기입해~!👏")
+        // objArrLogin[0]["id"] = "";
+        // objArrLogin[0]["pw"] = "";
+  objArrLogin.pop();
+  objArrLogin.pop();
     }
-
 }
 
 
@@ -178,5 +183,4 @@ function loginProcess() {
     // 회원가입값이랑, 로그인 기입값이랑 같은지 확인
     idPwChecking ()
  
-    location.replace('./main.html');
 }
