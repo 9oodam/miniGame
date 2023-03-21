@@ -1,0 +1,1037 @@
+@font-face {
+    font-family: "mapleLogin";
+    src: url(./font/Maplestory\ Bold.ttf) format(truetype);
+}
+
+
+/* 🟦 남아있는 여백 지우고 시작하기 */
+body {
+
+    font-family: "mapleLogin";
+
+    /* 남아있는 여백이 있어서 -> 확인하고 지워줌 */
+    margin: 0;
+    padding: 0;
+
+}
+
+/* 🟦 box 크기 잴 때, border 포함해서, 보이는대로 재기  */
+* {
+    box-sizing: border-box;
+
+}
+
+/* ------------------------------ 기본셋팅 END --------------------------- */
+
+
+/* 로그인 창 전체 영역 */
+
+.login-background-image-area {
+
+    /* 브라우저에서 보이는대로 크기를 설정하기 
+        [실익]
+            1. 화면이 반응형으로 보이게 된다. 어떻게 하건, 그 비율을 유지하게 된다. */
+    width: 100vw;
+    height: 100vh;
+    /* 왼쪽에서 떨어지는 수치, 위에서 떨어지는 수치는 변경 가능 ✅✅✅✅✅  */
+    /* left: 50%; */
+    /* top: 50%; */
+
+    /* transform: translate(); */
+
+    /* background-color: antiquewhite; */
+
+    /* 항상 그 자리에 고정 
+        [궁금한 점] 이건 왜 필요하지? */
+    /* position: fixed; */
+
+
+}
+
+
+
+.backgroundImage-container {
+
+    position: relative;
+}
+
+
+
+
+.login-background-image-area .backgroundImage-container {
+
+    width: 100vw;
+    height: 100vh;
+    /* top: 0; */
+    /* left: 0; */
+
+    /* background-size: cover; */
+    position: relative;
+
+}
+
+
+
+.login-background-image-area .backgroundImage-content {
+
+    width: 100vw;
+    height: 100vh;
+
+    /* object-fit: contain; */
+    object-fit: cover;
+    /* transform: translate(-10%, -10%); */
+
+
+    position: absolute;
+    /* left: 380px; */
+
+    /* top: 150px; */
+
+    /* transform: scale(1.1); */
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area {
+
+    width: 600px;
+    height: 400px;
+
+
+    /* background-color: rgb(221, 221, 204); */
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 12px;
+    border: 0.8px solid rgba(0, 0, 0, 0.897);
+
+}
+
+
+.backgroundImage-container .login-maple-concept-area .login-mapletab-area {
+
+    width: 600px;
+    height: 60px;
+
+    background-color: teal;
+}
+
+
+.backgroundImage-container .login-maple-concept-area .login-mapletab-area .mapletab-leaf-title .mapletab-leaf {
+
+    width: 40px;
+    height: 40px;
+
+    transform: rotate(80deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area .login-id-pw-login-area {
+
+    width: 600px;
+    height: 130px;
+
+    background-color: indianred;
+
+}
+
+.backgroundImage-container .login-maple-concept-area .login-idsave-pwsearch-findpw-area {
+
+    width: 600px;
+    height: 55px;
+
+    background-color: silver;
+
+}
+
+
+
+.backgroundImage-container .login-maple-concept-area .login-idcreate-homepage-exit-area {
+
+    width: 600px;
+    height: 80px;
+
+    background-color: hotpink;
+
+}
+
+
+
+
+/* 탭 디자인 */
+
+/* 탭 전체 스타일 */
+.backgroundImage-container .tabs {
+    position: absolute;
+
+    width: 500px;
+    height: 310px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: rgb(221, 221, 204);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: row;
+}
+
+/* 탭 스타일 */
+.tabs .tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    /* border-bottom: 3px solid #333333; */
+    /* background-color: #f8f8f8; */
+    /* line-height: 50px; */
+    /* font-size: 26px; */
+    /* text-align: center; */
+    /* color: #333333; */
+
+
+    border-bottom: 1px solid gray;
+    border-left: 3px solid #333333;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    box-shadow: 1px -3px 5px 0px;
+
+    /* border: 3px solid #333333; */
+
+    color: #333333;
+    background-color: rgb(81, 64, 47);
+    color: rgb(221, 221, 204);
+
+
+
+    /* display: block; */
+    float: left;
+
+
+    /* text-align: center; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top-right-radius: 12px; */
+    /* border-top-left-radius: 12px; */
+    /* transition: all 0.2s ease; */
+}
+
+.tabs .tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    /* border-bottom: 3px solid #333333; */
+    /* background-color: #f8f8f8; */
+    /* line-height: 50px; */
+    /* font-size: 26px; */
+    /* text-align: center; */
+    /* color: #333333; */
+
+
+    border-bottom: 1px solid gray;
+    border-left: 3px solid #333333;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    box-shadow: 1px -3px 5px 0px;
+
+    /* border: 3px solid #333333; */
+
+    color: #333333;
+    background-color: rgb(81, 64, 47);
+    color: rgb(221, 221, 204);
+
+
+
+    display: block;
+    float: left;
+    display: flex;
+
+
+    text-align: center;
+
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    /* transition: all 0.2s ease; */
+}
+
+.tab_item:hover {
+    opacity: 0.75;
+}
+
+/* 라디오 버튼 UI삭제*/
+input[name="tab_item"] {
+    display: none;
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+    /* display: none; */
+    /* padding: 40px 40px 0; */
+    clear: both;
+    overflow: hidden;
+
+    /* position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center; */
+}
+
+
+.maple_leaf_red {
+
+    width: 40px;
+    height: 40px;
+}
+
+.nexon-logo {
+
+    width: 40px;
+    height: 40px;
+
+}
+
+
+/* 선택 된 탭 콘텐츠를 표시 */
+#all:checked~#all_content,
+#programming:checked~#programming_content,
+#design:checked~#design_content {
+    display: block;
+}
+
+/* 선택된 탭 스타일 */
+.tabs input:checked+.tab_item {
+    background-color: rgb(221, 221, 204);
+    color: rgba(0, 0, 0, 0.89);
+
+    
+}
+
+
+
+
+
+/* 탭 전체 스타일 */
+.tabs {
+    /* margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin: 0 auto;
+     */
+
+}
+
+/* 탭 스타일 */
+.tab_item {
+    /* width: calc(100%/3);
+    height: 50px;
+    
+    border-bottom: 3px solid #333333;
+    background-color: rgb(81, 64, 47);
+    color: #333333;
+
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    
+    
+    display: block;
+    float: left;
+    
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease; */
+
+}
+
+.tab_item:hover {
+    /* opacity: 0.75; */
+}
+
+/* 라디오 버튼 UI삭제*/
+/* input[name="tab_item"] { */
+/* display: none; */
+}
+
+/* 탭 컨텐츠 스타일 */
+.tab_content {
+    /* display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    overflow: hidden; */
+}
+
+
+/* 선택 된 탭 콘텐츠를 표시 */
+/* #all:checked ~ #all_content,
+  #programming:checked ~ #programming_content,
+  #design:checked ~ #design_content { */
+/* display: block; */
+
+
+/* 선택된 탭 스타일 */
+/* .tabs input:checked + .tab_item { */
+/* background-color: #333333; */
+/* background-color: rgb(221, 221, 204);
+    color: rgb(81, 64, 47);
+  } */
+
+
+/* ; */
+/* ------------- 하위 요소 디자인  ----------------- */
+
+
+.login-id-pw-area {
+    width: 500px;
+    height: 120px;
+
+    /* background-color: indigo; */
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+
+.login-left-area {
+
+    width: 350px;
+    height: 110px;
+    /* background-color: greenyellow; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+
+
+.id-input-deco {
+    width: 370px;
+    height: 45px;
+
+    background-color: rgb(204, 183, 153);
+    color: rgb(48, 29, 9);
+}
+
+.pw-input-deco {
+    margin-top: 5px;
+
+    width: 370px;
+    height: 45px;
+    background-color: rgb(204, 183, 153);
+    color: rgb(48, 29, 10);
+}
+
+
+.login-right-area {
+
+    width: 120px;
+    height: 120px;
+
+    /* background-color: bisque; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button {
+    background-color: rgb(204, 163, 129);
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+}
+
+.login-button-font {
+    cursor: pointer;
+    font-size: 18px;
+    /* font-weight: 700; */
+    color: whitesmoke;
+    /* text-shadow:-3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000; */
+    -webkit-text-stroke: 2px rgb(81, 64, 47);
+
+    position: absolute;
+
+}
+
+
+.idSave-findIdPw {
+
+    width: 500px;
+    height: 38px;
+
+    /* background-color: yellowgreen; */
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: relative;
+}
+
+
+.idSave_area {
+    width: 100px;
+    height: 30px;
+
+    /* background-color: green; */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    left: 15px;
+
+}
+
+
+.findId_area {
+    width: 100px;
+    height: 30px;
+
+    /* background-color: blue; */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    left: 190px;
+
+}
+
+
+
+.findPw_area {
+
+    /* cursor: pointer; */
+
+    width: 120px;
+    height: 30px;
+
+    /* background-color: yellow; */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    left: 350px;
+
+
+}
+
+
+
+.join-homepage-exit {
+    cursor: pointer;
+
+    width: 580px;
+    height: 90px;
+
+    /* background-color: hotpink;   */
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.join-button {
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
+
+    width: 100px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+}
+
+.join-button-font {
+    cursor: pointer;
+
+    position: absolute;
+    left: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
+}
+
+.exit-button {
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
+
+    width: 100px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+
+.exit-button-font {
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+
+    position: absolute;
+    left: 375px;
+
+    cursor: pointer;
+}
+
+
+
+.homepage-button {
+    cursor: pointer;
+
+    background-color: rgb(204, 163, 129);
+    border-radius: 8px;
+
+    width: 100px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.homepage-button-font {
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+    position: absolute;
+    left: 215px;
+
+    -webkit-text-stroke: 1px rgb(81, 64, 47);
+
+}
+
+
+/* ------------ 자바스크립트랑 팝업 연결 작업 ---------------- */
+
+
+.popup-user-join-area{
+
+    /* position: fixed; */
+    /* top: -50%; */
+    /* left: -50%; */
+    /* transform: translate(-50%, -50%); */
+
+    /* 처음엔 안 보이게 해두었다가, 클릭하면, 보이게 하기  */
+    display: none;
+    /* position: absolute; */
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+
+/* 함수가 보이게 될 때, 실행되는 CSS 
+    ⭐⭐⭐ 같이 있을 때 실행, 이므로, 같이 붙여 써야 함. */
+.popup-user-join-area.is-active {
+    display: block;
+    /* z-index: 1; */
+
+    /* display: flex;
+        align-items: center;
+        justify-content: center; */
+    /* position: absolute; */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+
+    /* 가운데로 오게 하는 새로운 방법!
+                ⭐ 팝업 만들기 할 때, 반드시 쓰게 됨! ⭐⭐⭐ */
+
+    /* position: relative; */
+
+
+}
+
+
+
+
+
+.popup-user-join-area .create-userid-area {
+
+    width: 350px;
+    height: 550px;
+    border-radius: 12px;
+
+    background-color: rgb(255, 255, 224);
+
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* x 자 표시 ✅ '영역' 잡기 */
+.popup-user-join-area .create-userid-area span {
+
+    /* background-color: red; */
+
+    width: 30px;
+    height: 30px;
+
+    display: block;
+    
+    position: absolute;
+    right: 0;
+
+    cursor: pointer;
+
+}
+
+
+.popup-user-join-area .create-userid-area span::after, 
+.popup-user-join-area .create-userid-area span::before {
+
+    content: '';
+    width: 15px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.904);
+
+    border-radius: 2px;
+
+    display: block;
+
+
+    position: absolute;
+    top: 12px;
+    left: 8px;
+
+    transform: rotate(45deg);
+}
+
+/* 중복되는 것 빼고, 방향만 바꾸기, 다른 - 자 */
+.popup-user-join-area .create-userid-area span::after {
+    transform: rotate(-45deg);
+}
+
+
+
+.popup-user-join-area .create-userid-area .userid-title-container {
+
+    width: 300px;
+    height: 30px;
+    /* background-color: thistle; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-user-join-area .create-userid-area .userid-photo-container {
+    width: 300px;
+    height: 120px;
+    /* background-color: peachpuff; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.popup-user-join-area .create-userid-area .userid-photo-container .userid-photo-content {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: gray;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.popup-user-join-area .create-userid-area .userid-create-container {
+    width: 300px;
+    height: 40px;
+    /* background-color: indianred; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-user-join-area .create-userid-area .userid-create-container .userid-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+
+
+.popup-user-join-area .create-userid-area .userpw-create-container {
+
+    width: 300px;
+    height: 40px;
+
+    /* background-color: powderblue; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.popup-user-join-area .create-userid-area .userpw-create-container .userpw-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+
+
+.popup-user-join-area .create-userid-area .userpw-2nd-create-container {
+    width: 300px;
+    height: 40px;
+
+    background-color: seashell;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.popup-user-join-area .create-userid-area .userpw-create-container .user-pw1-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+.popup-user-join-area .create-userid-area .userpw-2nd-create-container .user-pw2-email {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+.popup-user-join-area .create-userid-area .username-create-container {
+
+    width: 300px;
+    height: 70px;
+
+    /* background-color: silver; */
+
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.popup-user-join-area .create-userid-area .username-create-container .user-name-text {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.popup-user-join-area .create-userid-area .username-create-container .user-name {
+
+    width: 300px;
+    height: 39px;
+    border-radius: 8px;
+
+}
+
+
+.popup-user-join-area .create-userid-area .user-malefemale-container {
+
+    width: 300px;
+    height: 70px;
+
+    /* background-color: maroon; */
+
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    
+}
+
+
+
+.user-name-text-container {
+    /* background-color: tomato; */
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name-text {
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.popup-user-join-area .user-malefemale-container .user-male-container {
+
+    width: 300px;
+    height: 20px;
+    /* background-color: gainsboro; */
+
+    display: flex;
+    align-items: center;
+}
+
+
+.popup-user-join-area .user-malefemale-container .user-female-container {
+
+    width: 300px;
+    height: 25px;
+    /* background-color: gainsboro; */
+
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+.popup-user-join-area .create-userid-area .birthday-create-container {
+
+    width: 300px;
+    height: 60px;
+
+
+    /* background-color:blue; */
+
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    
+}
+
+
+.popup-user-join-area .create-userid-area .birthday-create-container .birday-text {
+
+    width: 300px;
+    height: 20px;
+
+    /* background-color: yellowgreen; */
+    display: flex;
+    align-items: center;
+}
+
+
+.popup-user-join-area .create-userid-area .birthday-create-container .birday-choice {
+
+    width: 300px;
+    height: 30px;
+
+    /* background-color: cyan; */
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.popup-user-join-area .create-userid-area .fin-join-container .fin-join-button {
+
+    width: 300px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.87);  
+    border-radius: 10px;
+
+    color: rgba(255, 255, 255, 0.904);
+}
+
+
+
+
+

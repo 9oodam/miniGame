@@ -1,7 +1,36 @@
 // 📘 전역변수 모음
 
-let objArr = [];
-let objArrLogin = [];
+let objArr = []
+let objArrLogin = []
+
+
+// 🟦 배경음악 넣기 
+
+function bgm_play() {
+
+    let audio = new Audio("maple_story_BGM.mp3");
+    
+    // load 하기 
+    audio.load()
+
+    // 볼륨 설정 
+    audio.volume = 0.3;
+    
+    // 실행
+    audio.loop = true;
+    audio.autoplay = true;
+    
+    // window.onload = audio.play();
+}
+
+
+    // 페이지 로드 되면, play 하기
+    // window.onload = function() {
+    //     audio.play();
+    //     alert("window.onload : 브라우저가 HTML 렌더링 다 했데~👏")
+    // }
+    
+
 
 // 📘 [조각기능] 회원가입 버튼 누르면 > 팝업 뜨게 하기
 
@@ -43,18 +72,19 @@ function create(
   this.birthday = _birthday;
 }
 
-// 입력한
-function addArr() {
-  // 팝업 부분 가져오기
-  let popupUser_id = document.querySelector(".userid-email");
-  let popupUser_pw1st = document.querySelector(".user-pw1-email");
-  let popupUser_pw2nd = document.querySelector(".user-pw2-email");
-  let popupUser_name = document.querySelector(".user-name");
-  let popupUser_male = document.querySelector(".male_checked");
-  let popupUser_female = document.querySelector(".female_checked");
-  let popupUser_birthday = document.querySelector(".user-name-text");
+// 🟦 생성함수를 활용하여 회원가입 데이터를 객체 > 배열로 변환하기
+function addArr () {
 
-  // console.log(popupUserJoining)/
+    // 팝업 부분 가져오기 
+    let popupUser_id = document.querySelector(".userid-email");
+    let popupUser_pw1st = document.querySelector(".user-pw1-email");
+    let popupUser_pw2nd = document.querySelector(".user-pw2-email");
+    let popupUser_name = document.querySelector(".user-name");
+    let popupUser_male = document.querySelector(".male_checked");
+    let popupUser_female = document.querySelector(".female_checked");
+    let popupUser_birthday = document.querySelector(".user-name-text");
+    
+    // console.log(popupUserJoining)/
 
   // console.log(popupUserJoining[0].value);
   // console.log(popupUserJoining[1].value)
@@ -81,9 +111,10 @@ function addArr() {
   alert(objArr[0]["pw1st"]);
 }
 
-// 회원가입 버튼 누르면 > 전송되게 하기
-function submitInfo() {
-  addArr();
+// 🟦 회원가입 버튼 누르면 > 전송되게 하기 
+function submitInfo () {
+    
+    addArr();
 
   // 제대로 다 썼는지 확인해야 함.
   alert("다 제대로 쓴거 맞지~ 이제 로그인 창으로 넘어간다~");
@@ -92,7 +123,7 @@ function submitInfo() {
   popupCreateId();
 }
 
-// 로그인 기입정보 > 객체로 만들기
+// 🟦 로그인 기입정보 > 객체로 만들기 
 // let objArrLogin = [] ✅ 전역 변수 탭으로 이동
 
 function createUserLog(_id, _pw) {
@@ -117,33 +148,35 @@ function addArrUserLog() {
   alert(objArrLogin[0]["pw"]);
 }
 
-function idPwChecking() {
-  // 회원가입값이랑, 로그인 값이랑, 같은지 비교
-  // 회원가입값
-  // objArr[0]['id']
-  // objArr[0]['pw1st']
-  // 로그인 값
-  // objArrLogin[0]['id']
-  // objArrLogin[0]['pw']
 
-  // 비교
-  if (
-    objArr[0]["id"] == objArrLogin[0]["id"] &&
-    objArr[0]["pw1st"] == objArrLogin[0]["pw"]
-  ) {
-    alert("회원가입값이랑 로그인이랑 같아~!🤩");
-  } else {
-    alert("다시 기입해~!👏");
-  }
+// 🟦 '로그인 기입 정보' 와 '회원가입 정보'를 비교하기 
+function idPwChecking () {
+
+    // 회원가입값이랑, 로그인 값이랑, 같은지 비교
+        // 회원가입값 
+            // objArr[0]['id']
+            // objArr[0]['pw1st']
+        // 로그인 값    
+            // objArrLogin[0]['id']
+            // objArrLogin[0]['pw']
+    
+    // 비교
+    if ( objArr[0]['id'] == objArrLogin[0]['id'] && objArr[0]['pw1st'] == objArrLogin[0]['pw'] ) {
+        alert ("회원가입값이랑 로그인이랑 같아~!🤩")
+    } else {
+        alert( "다시 기입해~!👏")
+    }
+
 }
 
+
+// 🟦 로그인 버튼 누르면 -> 1) 로그인 기입 정보를 객체화 하고 2) 회원정보랑 비교하기 
 function loginProcess() {
   // 로그인 한 정보를 객체로 만들기
   addArrUserLog();
 
-  // 회원가입값이랑, 로그인 기입값이랑 같은지 확인
-  idPwChecking();
-
-  let mainmv = "./main.html";
-  location.replace(mainmv);
+    // 회원가입값이랑, 로그인 기입값이랑 같은지 확인
+    idPwChecking ()
+ 
+    location.replace('./main.html');
 }
