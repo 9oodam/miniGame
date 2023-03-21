@@ -112,35 +112,35 @@ function monsterspown(mon_num) {
     maxmonsterhp = monster.hp;
     monmindam = Math.floor(monster.atk - monster.atk / 10);
     monster.atk = Math.floor(monster.atk - monster.atk / 10);
-    monhpbarfunc()
+    monhpbarfunc();
   } else if (mon == 2) {
     monster = orange;
     monsterimg = document.querySelector(".monster").classList.add("orangeimg");
     maxmonsterhp = monster.hp;
     monmindam = Math.floor(monster.atk - monster.atk / 10);
     monster.atk = Math.floor(monster.atk - monster.atk / 10);
-    monhpbarfunc()
+    monhpbarfunc();
   } else if (mon == 3) {
     monster = wolf;
     monsterimg = document.querySelector(".monster").classList.add("wolfimg");
     maxmonsterhp = monster.hp;
     monmindam = Math.floor(monster.atk - monster.atk / 10);
     monster.atk = Math.floor(monster.atk - monster.atk / 10);
-    monhpbarfunc()
+    monhpbarfunc();
   } else if (mon == 4) {
     monster = dragon;
     monsterimg = document.querySelector(".monster").classList.add("dragonimg");
     maxmonsterhp = monster.hp;
     monmindam = Math.floor(monster.atk - monster.atk / 10);
     monster.atk = Math.floor(monster.atk - monster.atk / 10);
-    monhpbarfunc()
+    monhpbarfunc();
   } else if (mon == 5) {
     monster = boss;
     monsterimg = document.querySelector(".monster").classList.add("bossimg");
     maxmonsterhp = monster.hp;
     monmindam = Math.floor(monster.atk - monster.atk / 10);
     monster.atk = Math.floor(monster.atk - monster.atk / 10);
-    monhpbarfunc()
+    monhpbarfunc();
   }
 
   console.log("소환된 몬스터: " + monster);
@@ -193,6 +193,10 @@ function atk() {
   console.log("유저 대미지 ", userdam);
   if (monster.hp <= 0) {
     winnerpop();
+  }
+
+  if (monster.hp <= 0) {
+    return;
   }
 
   setTimeout(function () {
@@ -309,7 +313,7 @@ function useratkd() {
 
   let strArr = atkd.className.split(" ");
 
-  if(strArr.indexOf("atkd") == -1) {
+  if (strArr.indexOf("atkd") == -1) {
     atkd.classList.add("atkd");
   }
 
@@ -323,7 +327,7 @@ function monsteratkd() {
 
   let strArr = atkd.className.split(" ");
 
-  if(strArr.indexOf("atkd") == -1) {
+  if (strArr.indexOf("atkd") == -1) {
     atkd.classList.add("atkd");
   }
 
